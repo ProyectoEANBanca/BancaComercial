@@ -1,0 +1,16 @@
+CREATE database LOGIN;
+
+USE LOGIN;
+create table USUARIOJSP (
+	idusuario int not null auto_increment,
+    usuario varchar(30) not null,
+    contrasena varchar(50) not null,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+    primary key(idusuario)
+)
+
+describe USUARIOJSP;
+
+insert into USUARIOJSP(usuario,contrasena)values("sergio2018","sergio2018");
+
+select * from USUARIOJSP;
