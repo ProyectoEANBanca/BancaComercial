@@ -2,7 +2,8 @@ CREATE database LOGIN;
 
 USE LOGIN;
 create table USUARIOJSP (
-	idusuario int not null auto_increment,
+    idusuario int not null auto_increment,
+    nombreCompleto varchar(100) not null,
     usuario varchar(30) not null,
     contrasena varchar(50) not null,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
@@ -11,6 +12,6 @@ create table USUARIOJSP (
 
 describe USUARIOJSP;
 
-insert into USUARIOJSP(usuario,contrasena)values("sergio2018","sergio2018");
+insert into USUARIOJSP(nombreCompleto,usuario,contrasena)values("Sergio Medina Chaparro","sergio2018","sergio2018");
 
 select * from USUARIOJSP;
