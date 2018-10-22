@@ -47,6 +47,8 @@
             // los datos que recibe la vista del servlets
             HttpSession sesion = request.getSession();
             int nivel = 0;
+            
+            // validar el nivel del servlet
             if (request.getAttribute("nivel") != null) {
                 // este valor nos llega como objeto y hat que pasarla a Integer
                 nivel = (Integer) request.getAttribute("nivel");
@@ -61,6 +63,13 @@
                 }
 
             }
+            
+            if(request.getParameter("cerrar")  != null){
+                session.invalidate();
+                //sesion.invalidate();
+            }
+            
+
 
 
         %>

@@ -5,6 +5,27 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true" %>
+
+<%
+
+    HttpSession sesion = request.getSession();
+
+    if (sesion.getAttribute("nivel") == null) {
+        response.sendRedirect("../login.jsp");
+
+    } else {
+        String nivel = sesion.getAttribute("nivel").toString();
+        if (!nivel.equals("1")) {
+            response.sendRedirect("../login.jsp");
+        }
+    }
+
+
+%>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +33,15 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Administrador</h1>
+
+        <div align="right">
+            Bienvenido Sr  <p><%= sesion.getAttribute("nombre")%></p>
+            <a href="../login.jsp?cerrar=true">Cerrar Sesion</a>
+            <hr>
+
+        </div>
+
+        <h4>Administrador</h4> 
+
     </body>
 </html>
