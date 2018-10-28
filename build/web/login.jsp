@@ -19,7 +19,7 @@
     </head>
     <body>
 
-        <button><a>Hover Me</a></button>
+      
 
         <div class="body"></div>
         <div class="grad"></div>
@@ -47,7 +47,7 @@
             // los datos que recibe la vista del servlets
             HttpSession sesion = request.getSession();
             int nivel = 0;
-            
+
             // validar el nivel del servlet
             if (request.getAttribute("nivel") != null) {
                 // este valor nos llega como objeto y hat que pasarla a Integer
@@ -63,13 +63,11 @@
                 }
 
             }
-            
-            if(request.getParameter("cerrar")  != null){
+
+            if (request.getParameter("cerrar") != null) {
                 session.invalidate();
                 //sesion.invalidate();
             }
-            
-
 
 
         %>

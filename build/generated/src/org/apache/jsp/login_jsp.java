@@ -87,6 +87,8 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
             // los datos que recibe la vista del servlets
             HttpSession sesion = request.getSession();
             int nivel = 0;
+            
+            // validar el nivel del servlet
             if (request.getAttribute("nivel") != null) {
                 // este valor nos llega como objeto y hat que pasarla a Integer
                 nivel = (Integer) request.getAttribute("nivel");
@@ -101,6 +103,13 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
                 }
 
             }
+            
+            if(request.getParameter("cerrar")  != null){
+                session.invalidate();
+                //sesion.invalidate();
+            }
+            
+
 
 
         
