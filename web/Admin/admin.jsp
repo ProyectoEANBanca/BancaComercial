@@ -75,6 +75,74 @@
             .usuario{
                 color:tomato;
             }
+
+            /*               <!--Aqui vamos agregar las grid para los modulos--> */
+
+            body{
+                color: #fff;
+                font-family: 'Nunito Semibold';
+                text-align: center;
+            }
+            #content{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: minmax(136px, auto);
+                grid-gap: 10px;
+                max-width: 960px;
+                margin: 0 auto;
+                grid-template-areas:
+                    "header header header header"
+                    "footer footer footer footer"
+                    "main main main main"
+                    "main main main main"
+                    "aside aside nav nav"
+                    "section section section section"
+                    "section section section section";
+            }
+            /* desktop grid */
+            @media screen and (min-width: 760px){
+                #content{
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-auto-rows: minmax(100px, auto);
+                    grid-gap: 10px;
+                    max-width: 960px;
+                    margin: 0 auto;
+                    grid-template-areas:
+                        "header header header header"
+                        "aside main main main"
+                        "nav main main main"
+                        "section section section section"
+                        "section section section section"
+                        "footer footer footer footer";
+                }
+            }
+            #content > *{
+                background: #3bbced;
+                padding: 30px;
+            }
+            main{
+                grid-area: main;
+            }
+            aside{
+                grid-area: aside;
+            }
+            nav{
+                grid-area: nav;
+            }
+            section{
+                grid-area: section;
+            }
+            footer{
+                grid-area: footer;
+                background: #333 !important;
+            }
+
+            .cardForm-Field50 {
+                float: left;
+                width: 50%;
+            }
+
         </style>
     </head>
     <body >
@@ -131,10 +199,57 @@
                     </div>
                 </div>
             </nav>
+
+
+
+            <!--Aqui vamos agregar las grid para los modulos--> 
+
+            <div id="content">
+                <main>
+
+                    <div class="card">
+                        <div class="card__front card__part">
+                            <img class="card__front-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
+                            <img class="card__front-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
+                            <p class="card_numer">1223 2343 4564 6258</p>
+                            <div class="card__space-75">
+                                <span class="card__label">Card holder</span>
+                                <p class="card__info">Sergio Medina Chaparro</p>
+                            </div>
+                            <div class="card__space-25">
+                                <span class="card__label">Expires</span>
+                                <p class="card__info">10/25</p>
+                            </div>
+                        </div>
+
+                        <div class="card__back card__part">
+                            <div class="card__black-line"></div>
+                            <div class="card__back-content">
+                                <div class="card__secret">
+                                    <p class="card__secret--last">420</p>
+                                </div>
+                                <img class="card__back-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
+                                <img class="card__back-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </main>
+                <section>Section</section>
+                <aside>Aside</aside>
+                <nav>Nav</nav>
+                <footer>Footer</footer>
+
+            </div>
+
+
         </header>
-
-
-
         <!-- Compiled and minified JavaScript -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>

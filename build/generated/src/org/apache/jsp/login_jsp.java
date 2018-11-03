@@ -58,7 +58,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("\r\n");
-      out.write("        <button><a>Hover Me</a></button>\r\n");
+      out.write("      \r\n");
       out.write("\r\n");
       out.write("        <div class=\"body\"></div>\r\n");
       out.write("        <div class=\"grad\"></div>\r\n");
@@ -87,7 +87,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
             // los datos que recibe la vista del servlets
             HttpSession sesion = request.getSession();
             int nivel = 0;
-            
+
             // validar el nivel del servlet
             if (request.getAttribute("nivel") != null) {
                 // este valor nos llega como objeto y hat que pasarla a Integer
@@ -103,13 +103,11 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
                 }
 
             }
-            
-            if(request.getParameter("cerrar")  != null){
+
+            if (request.getParameter("cerrar") != null) {
                 session.invalidate();
                 //sesion.invalidate();
             }
-            
-
 
 
         
