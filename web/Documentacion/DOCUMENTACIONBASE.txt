@@ -1,2 +1,4 @@
 Camilo
 1(Base login)-> 
+Sergio
+2 (Crud) https://www.youtube.com/watch?v=D3HER9EGQSI
