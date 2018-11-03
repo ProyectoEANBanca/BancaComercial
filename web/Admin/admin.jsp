@@ -214,7 +214,7 @@
                             <p class="card_numer">1223 2343 4564 6258</p>
                             <div class="card__space-75">
                                 <span class="card__label">Card holder</span>
-                                <p class="card__info">Sergio Medina Chaparro</p>
+                                <p class="card__info"><%= sesion.getAttribute("nombre")%></p>
                             </div>
                             <div class="card__space-25">
                                 <span class="card__label">Expires</span>
