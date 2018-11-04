@@ -45,6 +45,7 @@ public class Acceso {
             while(rs.next()){
                 //obtenemos el indice de la tabla de datos con el nivel del usuario
                nivel = rs.getInt(1);
+               nivel = rs.getInt(2);
 
 
             }

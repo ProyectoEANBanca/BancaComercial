@@ -135,10 +135,10 @@
                         <div class="card__front card__part">
                             <img class="card__front-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
                             <img class="card__front-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
-                            <p class="card_numer">**** **** **** 6258</p>
+                            <p class="card_numer">1245 1548 1254 6258</p>
                             <div class="card__space-75">
                                 <span class="card__label">Card holder</span>
-                                <p class="card__info"><%= sesion.getAttribute("nombrecomnpleto")%></p>
+                                <p class="card__info"><%= sesion.getAttribute("nombre")%></p>
                             </div>
                             <div class="card__space-25">
                                 <span class="card__label">Expires</span>

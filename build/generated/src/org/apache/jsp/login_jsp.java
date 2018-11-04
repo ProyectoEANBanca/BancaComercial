@@ -74,7 +74,8 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                <label class=\"entrada\">Contraseña</label><br>\r\n");
       out.write("                <input  type=\"password\" placeholder=\"password\" name=\"txtcontr\"><br>\r\n");
-      out.write("                <input type=\"submit\" name=\"btnIniciar\" value=\"Login\">\r\n");
+      out.write("                <input class=\"btn-floating btn-large pulse\" type=\"submit\" name=\"btnIniciar\" value=\"Login\">\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("            </form>\r\n");
@@ -100,6 +101,14 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
                     //si es adminstrador lo redirecionamos a la pagina del administrador
                     response.sendRedirect("Admin/admin.jsp");
 
+                }
+                else if(nivel == 2){
+                     // aqui vamos a crear la variale la session
+                    sesion.setAttribute("nombre", request.getAttribute("nombre"));
+                    sesion.setAttribute("nivel", nivel);
+                    //si es adminstrador lo redirecionamos a la pagina del administrador
+                    response.sendRedirect("Admin/usuario.jsp");
+                
                 }
 
             }

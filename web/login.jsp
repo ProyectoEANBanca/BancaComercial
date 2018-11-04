@@ -35,7 +35,8 @@
 
                 <label class="entrada">Contraseña</label><br>
                 <input  type="password" placeholder="password" name="txtcontr"><br>
-                <input type="submit" name="btnIniciar" value="Login">
+                <input class="btn-floating btn-large pulse" type="submit" name="btnIniciar" value="Login">
+
 
 
             </form>
@@ -60,6 +61,14 @@
                     //si es adminstrador lo redirecionamos a la pagina del administrador
                     response.sendRedirect("Admin/admin.jsp");
 
+                }
+                else if(nivel == 2){
+                     // aqui vamos a crear la variale la session
+                    sesion.setAttribute("nombre", request.getAttribute("nombre"));
+                    sesion.setAttribute("nivel", nivel);
+                    //si es adminstrador lo redirecionamos a la pagina del administrador
+                    response.sendRedirect("Admin/usuario.jsp");
+                
                 }
 
             }

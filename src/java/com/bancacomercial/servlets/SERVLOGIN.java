@@ -37,7 +37,7 @@ public class SERVLOGIN extends HttpServlet {
             String nombre;
             String contra;
             int nivel = 0;
-            String nombreC = "";
+     
 
             
             //un objeto de tipo aceeso
@@ -58,14 +58,14 @@ public class SERVLOGIN extends HttpServlet {
                 // si es 1 es administrador
                 //si es 2 es un usuario
                 nivel = acc.validar(nombre, contra);
-                nombreC = usuario.getNombreCompleto();
+       
        
                 
                 
                 //mandar parametros a la vista
                 request.setAttribute("nivel", nivel);
                 request.setAttribute("nombre", nombre);
-                request.setAttribute("nombrecomnpleto", nombreC);
+     
                 //la comunicacion va hacer con login
                 rd = request.getRequestDispatcher("login.jsp");
                 
