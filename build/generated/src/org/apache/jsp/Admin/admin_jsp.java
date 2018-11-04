@@ -58,6 +58,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (!nivel.equals("1")) {
             response.sendRedirect("../login.jsp");
         }
+
     }
 
 
@@ -115,18 +116,10 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            .usuario{\r\n");
       out.write("                color:tomato;\r\n");
       out.write("            }\r\n");
+      out.write("\r\n");
       out.write("        </style>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body >\r\n");
-      out.write("        <!--\r\n");
-      out.write("            <div align=\"right\">\r\n");
-      out.write("                Bienvenido Sr  <p>");
-      out.print( sesion.getAttribute("nombre"));
-      out.write("</p>\r\n");
-      out.write("                <a href=\"../login.jsp?cerrar=true\">Cerrar Sesion</a>\r\n");
-      out.write("                <hr>\r\n");
-      out.write("    \r\n");
-      out.write("            </div>-->\r\n");
       out.write("\r\n");
       out.write("        <!-- navbar -->\r\n");
       out.write("        <header>\r\n");
@@ -137,13 +130,12 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"chip\">\r\n");
       out.write("                        <i class=\"fas fa-child\"></i>\r\n");
       out.write("                        ");
-      out.print( sesion.getAttribute("nombre"));
+      out.write("\r\n");
+      out.write("                        ");
+      out.print( sesion.getAttribute("nivel"));
       out.write("\r\n");
       out.write("                    </div>\r\n");
       out.write("\r\n");
-      out.write("<!--                    <a href=\"#\" class=\"brand-logo color \">Bienvenido ");
-      out.print( sesion.getAttribute("nombre"));
-      out.write("</a>-->\r\n");
       out.write("                    <a href=\"#\" class=\"sidenav-trigger\" data-target=\"mobile-menu\">\r\n");
       out.write("                        <i class=\"material-icons\">menu</i>\r\n");
       out.write("                    </a>\r\n");
@@ -156,10 +148,6 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <li><a href=\"../index.html\" class=\"tooltipped btn-floating btn-small indigo darken-4\" data-position=\"bottom\" data-tooltip=\"Inicio\">\r\n");
       out.write("                                <i class=\"fas fa-users\"></i>\r\n");
       out.write("                            </a></li>\r\n");
-      out.write("                        <!--                                                    <li><a href=\"#\" class=\"tooltipped btn-floating btn-small indigo darken-4\" data-position=\"bottom\" data-tooltip=\"Administrador\">\r\n");
-      out.write("                                                                                    <i class=\"fas fa-user-shield\"></i>\r\n");
-      out.write("                                                    </a></li>-->\r\n");
-      out.write("\r\n");
       out.write("                        <li><a href=\"../login.jsp?cerrar=true\" class=\"tooltipped btn-floating btn-small indigo darken-4\" data-position=\"bottom\" data-tooltip=\"Cerra Sesion\">\r\n");
       out.write("                                <i class=\"fas fa-sitemap\"></i>\r\n");
       out.write("                            </a></li>\r\n");
@@ -177,10 +165,57 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\r\n");
       out.write("                </div>\r\n");
       out.write("            </nav>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("            <!--Aqui vamos agregar las grid para los modulos--> \r\n");
+      out.write("            <div id=\"content\">\r\n");
+      out.write("                <main>\r\n");
+      out.write("\r\n");
+      out.write("                    <!--implementando nuestra tarjeta de credito-->\r\n");
+      out.write("\r\n");
+      out.write("                    <div class=\"card\">\r\n");
+      out.write("                        <div class=\"card__front card__part\">\r\n");
+      out.write("                            <img class=\"card__front-square card__square\" src=\"https://image.ibb.co/cZeFjx/little_square.png\">\r\n");
+      out.write("                            <img class=\"card__front-logo card__logo\" src=\"https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png\">\r\n");
+      out.write("                            <p class=\"card_numer\">**** **** **** 6258</p>\r\n");
+      out.write("                            <div class=\"card__space-75\">\r\n");
+      out.write("                                <span class=\"card__label\">Card holder</span>\r\n");
+      out.write("                                <p class=\"card__info\">");
+      out.print( sesion.getAttribute("nivel"));
+      out.write("</p>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                            <div class=\"card__space-25\">\r\n");
+      out.write("                                <span class=\"card__label\">Expires</span>\r\n");
+      out.write("                                <p class=\"card__info\">10/25</p>\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("\r\n");
+      out.write("                        <div class=\"card__back card__part\">\r\n");
+      out.write("                            <div class=\"card__black-line\"></div>\r\n");
+      out.write("                            <div class=\"card__back-content\">\r\n");
+      out.write("                                <div class=\"card__secret\">\r\n");
+      out.write("                                    <p class=\"card__secret--last\">420</p>\r\n");
+      out.write("                                </div>\r\n");
+      out.write("                                <img class=\"card__back-square card__square\" src=\"https://image.ibb.co/cZeFjx/little_square.png\">\r\n");
+      out.write("                                <img class=\"card__back-logo card__logo\" src=\"https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png\">\r\n");
+      out.write("\r\n");
+      out.write("                            </div>\r\n");
+      out.write("                        </div>\r\n");
+      out.write("\r\n");
+      out.write("                    </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                </main>\r\n");
+      out.write("                <section>Section</section>\r\n");
+      out.write("                <aside>Aside</aside>\r\n");
+      out.write("                <nav>Nav</nav>\r\n");
+      out.write("                <footer>Footer</footer>\r\n");
+      out.write("\r\n");
+      out.write("            </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("        </header>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("        <!-- Compiled and minified JavaScript -->\r\n");
       out.write("        <script src=\"https://code.jquery.com/jquery-3.3.1.min.js\"></script>\r\n");
       out.write("        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js\"></script>\r\n");

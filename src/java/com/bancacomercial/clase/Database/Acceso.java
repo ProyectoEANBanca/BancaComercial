@@ -28,6 +28,8 @@ public class Acceso {
     
     }
     
+   
+    
     // metodo para validar el nivel del usuario que se 
     public int validar(String usuario, String contra){
         int nivel = 0;
@@ -44,7 +46,9 @@ public class Acceso {
             // reconrremos todos los resultados que nos trajo la consulta
             while(rs.next()){
                 //obtenemos el indice de la tabla de datos con el nivel del usuario
-                nivel = rs.getInt(1);
+               nivel = rs.getInt(1);
+
+
             }
             
             //nos desconectamos
@@ -55,12 +59,11 @@ public class Acceso {
             //e.printStackTrace();
              
         }
-        
+        //devolvemos el nivel de ese usuario con esa contraseña 
        return nivel;
     
     
+    
     }
-    
-    
     
 }
