@@ -2,5 +2,6 @@ Camilo
 1(Base login)-> 
 Documentacion
 1(login)(Camilo)https://www.youtube.com/watch?v=UuOusQXmxj8
+1.1 (CRUD HIBERNATE)https://www.youtube.com/watch?v=54usf-hXJus&t=1764s
 Sergio
 2 (Crud) https://www.youtube.com/watch?v=D3HER9EGQSI

@@ -28,8 +28,6 @@ public class Acceso {
     
     }
     
-   
-    
     // metodo para validar el nivel del usuario que se 
     public int validar(String usuario, String contra){
         int nivel = 0;

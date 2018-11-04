@@ -182,7 +182,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <div class=\"card__space-75\">\r\n");
       out.write("                                <span class=\"card__label\">Card holder</span>\r\n");
       out.write("                                <p class=\"card__info\">");
-      out.print( sesion.getAttribute("nombre"));
+      out.print( sesion.getAttribute("nombrecomnpleto"));
       out.write("</p>\r\n");
       out.write("                            </div>\r\n");
       out.write("                            <div class=\"card__space-25\">\r\n");

@@ -2,6 +2,7 @@
 package com.bancacomercial.servlets;
 
 import com.bancacomercial.clase.Database.Acceso;
+import hibernate.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -36,10 +37,13 @@ public class SERVLOGIN extends HttpServlet {
             String nombre;
             String contra;
             int nivel = 0;
+            String nombreC = "";
 
             
             //un objeto de tipo aceeso
             Acceso acc = new Acceso();
+            // usario de hibernate
+            Users usuario = new Users();
             
             //despachador de solicitar, encaminar las respuestas del servlets
             RequestDispatcher rd =null;
@@ -54,13 +58,14 @@ public class SERVLOGIN extends HttpServlet {
                 // si es 1 es administrador
                 //si es 2 es un usuario
                 nivel = acc.validar(nombre, contra);
+                nombreC = usuario.getNombreCompleto();
        
                 
                 
                 //mandar parametros a la vista
                 request.setAttribute("nivel", nivel);
                 request.setAttribute("nombre", nombre);
-     
+                request.setAttribute("nombrecomnpleto", nombreC);
                 //la comunicacion va hacer con login
                 rd = request.getRequestDispatcher("login.jsp");
                 
