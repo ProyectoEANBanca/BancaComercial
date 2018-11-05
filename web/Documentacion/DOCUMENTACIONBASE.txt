@@ -5,3 +5,13 @@ Documentacion
 1.1 (CRUD HIBERNATE)https://www.youtube.com/watch?v=54usf-hXJus&t=1764s
 Sergio
 2 (Crud) https://www.youtube.com/watch?v=D3HER9EGQSI
+
+*****************************
+SQL
+SELECT * FROM heroku_45299d59f23971d.users;
+
+INSERT INTO users(nombreCompleto,usuario,contrasena,nivel)values('Camila Morales Chaparro', 'camila001','camila011',2);
+
+update users set contrasena = 'camila001' WHERE idusuario = 41;
+https://tomatoma.wordpress.com/manual-de-php/insertar-cambiar-y-borrar-datos-de-una-tabla-mysql/
+*****************************
