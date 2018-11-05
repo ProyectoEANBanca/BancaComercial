@@ -3,12 +3,7 @@
 /*para la tarjeta de credito */
 
 @import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i');
-
-body{
-    color: #fff;
-    font-family: 'Nunito Semibold';
-    text-align: center;
-}  
+ 
 #content{
     display: grid;
     grid-template-columns: repeat(4, 1fr);

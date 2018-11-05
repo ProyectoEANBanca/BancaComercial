@@ -42,7 +42,7 @@
         <link rel="stylesheet" href="../css/admin.css"/>
         <link rel="stylesheet" href="../js/admin.js"/>
 
-        <title>DashBoard Cliente</title>
+        <title>DashBoard Administrador</title>
 
         <style>
             header{
