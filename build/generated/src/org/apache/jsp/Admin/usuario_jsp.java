@@ -78,7 +78,7 @@ public final class usuario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n");
       out.write("        <!-- Compiled and minified CSS -->\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css\">\n");
-      out.write("        <link rel=\"stylesheet\" href=\"../css/admin.css\"/>\n");
+      out.write("        <link rel=\"stylesheet\" href=\"../css/usuario.css\"/>\n");
       out.write("        <link rel=\"stylesheet\" href=\"../js/admin.js\"/>\n");
       out.write("\n");
       out.write("        <title>DashBoard Cliente</title>\n");
@@ -127,7 +127,7 @@ public final class usuario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <div class=\"container\">\n");
       out.write("\n");
       out.write("                    <div class=\"chip\">\n");
-      out.write("                        <i class=\"fas fa-child\"></i>\n");
+      out.write("                        <i class=\"fas fa-child\">Usuari@</i>\n");
       out.write("                        ");
       out.print( sesion.getAttribute("nombre"));
       out.write("\n");
@@ -165,6 +165,137 @@ public final class usuario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\n");
       out.write("                </div>\n");
       out.write("            </nav>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("            <!--Aqui vamos agregar las grid para los modulos--> \n");
+      out.write("            <div id=\"content\">\n");
+      out.write("                <main>\n");
+      out.write("\n");
+      out.write("                    <!--implementando nuestra tarjeta de credito-->\n");
+      out.write("\n");
+      out.write("                    <div class=\"card\">\n");
+      out.write("                        <div class=\"card__front card__part\">\n");
+      out.write("                            <img class=\"card__front-square card__square\" src=\"https://image.ibb.co/cZeFjx/little_square.png\">\n");
+      out.write("                            <img class=\"card__front-logo card__logo\" src=\"https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png\">\n");
+      out.write("                            <p class=\"card_numer\">1245 1548 1254 6258</p>\n");
+      out.write("                            <div class=\"card__space-75\">\n");
+      out.write("                                <span class=\"card__label\">Card holder</span>\n");
+      out.write("                                <p class=\"card__info\">");
+      out.print( sesion.getAttribute("nombre"));
+      out.write("</p>\n");
+      out.write("                            </div>\n");
+      out.write("                            <div class=\"card__space-25\">\n");
+      out.write("                                <span class=\"card__label\">Expires</span>\n");
+      out.write("                                <p class=\"card__info\">10/25</p>\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("\n");
+      out.write("                        <div class=\"card__back card__part\">\n");
+      out.write("                            <div class=\"card__black-line\"></div>\n");
+      out.write("                            <div class=\"card__back-content\">\n");
+      out.write("                                <div class=\"card__secret\">\n");
+      out.write("                                    <p class=\"card__secret--last\">420</p>\n");
+      out.write("                                </div>\n");
+      out.write("                                <img class=\"card__back-square card__square\" src=\"https://image.ibb.co/cZeFjx/little_square.png\">\n");
+      out.write("                                <img class=\"card__back-logo card__logo\" src=\"https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png\">\n");
+      out.write("\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("\n");
+      out.write("                    </div>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                </main>\n");
+      out.write("                <section>\n");
+      out.write("                    <div class=\"login\" style=\"background-color: #fff !important \">\n");
+      out.write("                        <form action=\"Transaccion\" method=\"POST\">\n");
+      out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">Id Cliente</label><br>\n");
+      out.write("\n");
+      out.write("                            <input  type=\"number\" placeholder=\"Id Cliente\" name=\"idcliente\" ><br>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">Numero Producto</label><br>\n");
+      out.write("                            <input  type=\"number\" placeholder=\"producto\" name=\"producto\"><br>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">Tipo Transaccion</label><br>\n");
+      out.write("                            <input  type=\"number\" placeholder=\"tipo\" name=\"tipo\"><br>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">Valor</label><br>\n");
+      out.write("                            <input  type=\"number\" placeholder=\"valor\" name=\"valor\"><br>\n");
+      out.write("\n");
+      out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">NRO_factura</label><br>\n");
+      out.write("                            <input  type=\"number\" placeholder=\"nro_factura\" name=\"nfacturas\"><br>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                            <input class=\"btn-floating btn-large pulse\" type=\"submit\" name=\"btnIniciar\" value=\"Login\">\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                        </form>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                    </div>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                    ");
+
+    // los datos que recibe la vista del servlets
+    //HttpSession sesion = request.getSession();
+    int nivel = 0;
+
+    // validar el nivel del servlet
+    if (request.getAttribute("nivel") != null) {
+        // este valor nos llega como objeto y hat que pasarla a Integer
+        nivel = (Integer) request.getAttribute("nivel");
+        if (nivel == 1) {
+
+            // aqui vamos a crear la variale la session
+            sesion.setAttribute("nombre", request.getAttribute("nombre"));
+            sesion.setAttribute("nivel", nivel);
+            //si es adminstrador lo redirecionamos a la pagina del administrador
+            response.sendRedirect("Admin/usuario.jsp");
+
+        }
+        else if(nivel == 2){
+             // aqui vamos a crear la variale la session
+            sesion.setAttribute("nombre", request.getAttribute("nombre"));
+            sesion.setAttribute("nivel", nivel);
+            //si es adminstrador lo redirecionamos a la pagina del administrador
+            response.sendRedirect("Admin/usuario.jsp");
+                
+        }
+
+    }
+
+    if (request.getParameter("cerrar") != null) {
+        session.invalidate();
+        //sesion.invalidate();
+    }
+
+
+                    
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                </section>\n");
+      out.write("                <aside>Aside</aside>\n");
+      out.write("                <nav>Nav</nav>\n");
+      out.write("                <footer>Footer</footer>\n");
+      out.write("\n");
+      out.write("            </div>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("        </header>\n");

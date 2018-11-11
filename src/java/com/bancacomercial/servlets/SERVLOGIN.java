@@ -37,13 +37,12 @@ public class SERVLOGIN extends HttpServlet {
             String nombre;
             String contra;
             int nivel = 0;
-     
 
             
             //un objeto de tipo aceeso
             Acceso acc = new Acceso();
             // usario de hibernate
-            Users usuario = new Users();
+            //Users usuario = new Users();
             
             //despachador de solicitar, encaminar las respuestas del servlets
             RequestDispatcher rd =null;

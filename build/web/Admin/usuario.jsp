@@ -163,7 +163,82 @@
 
 
                 </main>
-                <section>Section</section>
+                <section>
+                    <div class="login" style="background-color: #fff !important ">
+                        <form action="Transaccion" method="POST">
+                            <label class="entrada" style="background-color: #1a237e !important ">Id Cliente</label><br>
+
+                            <input  type="number" placeholder="Id Cliente" name="idcliente" ><br>
+
+
+                            <label class="entrada" style="background-color: #1a237e !important ">Numero Producto</label><br>
+                            <input  type="number" placeholder="producto" name="producto"><br>
+
+
+                            <label class="entrada" style="background-color: #1a237e !important ">Tipo Transaccion</label><br>
+                            <input  type="number" placeholder="tipo" name="tipo"><br>
+
+
+                            <label class="entrada" style="background-color: #1a237e !important ">Valor</label><br>
+                            <input  type="number" placeholder="valor" name="valor"><br>
+
+                            <label class="entrada" style="background-color: #1a237e !important ">NRO_factura</label><br>
+                            <input  type="number" placeholder="nro_factura" name="nfacturas"><br>
+
+
+
+                            <input class="btn-floating btn-large pulse" type="submit" name="btnIniciar" value="Login">
+
+
+
+                        </form>
+
+
+
+                    </div>
+
+
+                    <%
+    // los datos que recibe la vista del servlets
+    //HttpSession sesion = request.getSession();
+    int nivel = 0;
+
+    // validar el nivel del servlet
+    if (request.getAttribute("nivel") != null) {
+        // este valor nos llega como objeto y hat que pasarla a Integer
+        nivel = (Integer) request.getAttribute("nivel");
+        if (nivel == 1) {
+
+            // aqui vamos a crear la variale la session
+            sesion.setAttribute("nombre", request.getAttribute("nombre"));
+            sesion.setAttribute("nivel", nivel);
+            //si es adminstrador lo redirecionamos a la pagina del administrador
+            response.sendRedirect("Admin/usuario.jsp");
+
+        }
+        else if(nivel == 2){
+             // aqui vamos a crear la variale la session
+            sesion.setAttribute("nombre", request.getAttribute("nombre"));
+            sesion.setAttribute("nivel", nivel);
+            //si es adminstrador lo redirecionamos a la pagina del administrador
+            response.sendRedirect("Admin/usuario.jsp");
+                
+        }
+
+    }
+
+    if (request.getParameter("cerrar") != null) {
+        session.invalidate();
+        //sesion.invalidate();
+    }
+
+
+                    %>
+
+
+
+
+                </section>
                 <aside>Aside</aside>
                 <nav>Nav</nav>
                 <footer>Footer</footer>
