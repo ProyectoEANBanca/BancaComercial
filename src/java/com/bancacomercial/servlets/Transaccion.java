@@ -1,7 +1,7 @@
 package com.bancacomercial.servlets;
 
 import com.bancacomercial.clase.Database.Acceso;
-import hibernate.Users;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;

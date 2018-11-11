@@ -4,6 +4,11 @@
     Author     : SERGIO Y CAMILO
 --%>
 
+<%@page import="com.bancacomercial.clase.Database.Modelo"%>
+<!--https://docs.oracle.com/javaee/5/jstl/1.1/docs/tlddocs/c/tld-summary.html-->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="hibernate.*"%>
+<%@page import="java.util.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true" %>
 
@@ -39,10 +44,10 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-        <link rel="stylesheet" href="../css/admin.css"/>
+        <link rel="stylesheet" href="../css/usuario.css"/>
         <link rel="stylesheet" href="../js/admin.js"/>
 
-        <title>DashBoard Administrador</title>
+        <title>DashBoard Cliente</title>
 
         <style>
             header{
@@ -88,11 +93,11 @@
                 <div class="container">
 
                     <div class="chip">
-                        <i class="fas fa-child">Administrador</i>
-         
+                        <i class="fas fa-child">Administrador@</i>
                         <%= sesion.getAttribute("nombre")%>
                     </div>
 
+<!--                    <a href="#" class="brand-logo color ">Bienvenido <%= sesion.getAttribute("nombre")%></a>-->
                     <a href="#" class="sidenav-trigger" data-target="mobile-menu">
                         <i class="material-icons">menu</i>
                     </a>
@@ -122,6 +127,75 @@
                     </div>
                 </div>
             </nav>
+
+
+
+
+
+            <!--Aqui vamos agregar las grid para los modulos--> 
+            <div id="content">
+                <main>
+
+                </main>
+                <section>
+                    <table cellpadding="2" cellspacing="2" border="1">
+                        <!--
+                                                private Integer idusuario;
+                                                private String nombreCompleto;
+                                                private String usuario;
+                                                private String contrasena;
+                                                private int nivel;
+                                                private Date fecha;-->
+                        <% Modelo model = new Modelo();%>
+
+                        <tr>
+                            <th>
+                                idusuario   
+                            </th>
+                            <th>
+                                NombreCompleto   
+                            </th>
+                            <th>
+                                Usuario   
+                            </th>
+                            <th>
+                                Contraseña   
+                            </th>
+                            <th>
+                                Nivel   
+                            </th>
+                            <th>
+                                Fecha de Registro   
+                            </th>
+                            <th>
+                                Opciones  
+                            </th>
+
+                        </tr>
+
+                        <c:forEach var="p" items="<%= model.findAll()%>">
+
+                            <tr>
+                                <td>${p.idusuario}</td>
+                                <td>${p.nombreCompleto}</td>
+                                <td>${p.usuario}</td>
+                                <td>${p.contrasena}</td>
+                                <td>${p.nivel}</td>
+                                <td>${p.fecha}</td>
+                            </tr>
+
+                        </c:forEach> 
+
+                    </table>
+                </section>
+                <aside>Aside</aside>
+                <nav>Nav</nav>
+                <footer>Footer</footer>
+
+            </div>
+
+
+
 
 
 

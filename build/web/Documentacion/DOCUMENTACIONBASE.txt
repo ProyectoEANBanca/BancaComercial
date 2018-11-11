@@ -1,14 +1,24 @@
+Github
+
+serycamilo2019
+
+
 Camilo
 SERVIDOR == GlassFish Server 4.1.1
 1(Base login)-> 
 Documentacion
 1(login)(Camilo)https://www.youtube.com/watch?v=UuOusQXmxj8
 1.1 (CRUD HIBERNATE)https://www.youtube.com/watch?v=54usf-hXJus&t=1764s
-Sergio
+Camilo
 2 (Crud) https://www.youtube.com/watch?v=D3HER9EGQSI
 Repositorios claves para hacer conexiones y servicios con hibernate
 AbstractModel.java (https://github.com/duonghm56/eprojectSem4/blob/master/RadioCabs/src/java/org/group2/model/AbstractModel.java)
 HibernateUtil.java(https://gist.github.com/yusufcakmak/215ede715bab0e1d6489)
+
+pasos:
+crear la clase modelo
+creamos un controlador Cliente(servel) y tulizamos el metod (doGet)
+
 
 *****************************
 SQL

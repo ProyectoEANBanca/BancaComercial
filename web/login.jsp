@@ -19,7 +19,7 @@
     </head>
     <body>
 
-      
+
 
         <div class="body"></div>
         <div class="grad"></div>
@@ -53,6 +53,16 @@
             if (request.getAttribute("nivel") != null) {
                 // este valor nos llega como objeto y hat que pasarla a Integer
                 nivel = (Integer) request.getAttribute("nivel");
+                if (nivel == 1) {
+
+                    // aqui vamos a crear la variale la session
+                    sesion.setAttribute("nombre", request.getAttribute("nombre"));
+                    sesion.setAttribute("nivel", nivel);
+                    //si es adminstrador lo redirecionamos a la pagina del administrador
+                    response.sendRedirect("Admin/admin.jsp");
+
+                }
+
                 if (nivel == 2) {
 
                     // aqui vamos a crear la variale la session
@@ -62,7 +72,7 @@
                     response.sendRedirect("Admin/usuario.jsp");
 
                 }
-      }
+            }
 
             if (request.getParameter("cerrar") != null) {
                 session.invalidate();

@@ -2,6 +2,9 @@
 package com.bancacomercial.servlets;
 
 import com.bancacomercial.clase.Database.Acceso;
+
+
+//pendiente***********************
 import hibernate.Users;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -42,7 +45,7 @@ public class SERVLOGIN extends HttpServlet {
             //un objeto de tipo aceeso
             Acceso acc = new Acceso();
             // usario de hibernate
-            //Users usuario = new Users();
+            Users usuario = new Users();
             
             //despachador de solicitar, encaminar las respuestas del servlets
             RequestDispatcher rd =null;
