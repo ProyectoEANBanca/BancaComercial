@@ -68,7 +68,7 @@ public final class Delete_jsp extends org.apache.jasper.runtime.HttpJspBase
        int id=Integer.parseInt(request.getParameter("id"));
        ps=con.prepareStatement("delete from persona where Id="+id);
        ps.executeUpdate();
-       response.sendRedirect("index.jsp");
+       response.sendRedirect("principal.jsp");
        
        
       out.write("\r\n");

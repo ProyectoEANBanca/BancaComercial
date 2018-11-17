@@ -26,7 +26,7 @@
             //Creamo la Tabla:     
         %>
         <div class="container">            
-            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">New Add</button>
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal"> Agregar Nuevo Cliente</button>
             <div style="padding-left: 800px">                  
                 <input type="text" class="form-control" value="Buscar"/>                            
             </div>
@@ -92,7 +92,7 @@
                 if (nom != null && dni != null) {
                     ps = con.prepareStatement("insert into persona(Nombres, DNI)values('" + nom + "','" + dni + "')");
                     ps.executeUpdate();
-                    response.sendRedirect("index.jsp");
+                    response.sendRedirect("principal.jsp");
 
                 }
             %>

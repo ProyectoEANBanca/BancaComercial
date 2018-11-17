@@ -93,7 +93,7 @@ public final class Editar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                 <br>\r\n");
       out.write("                <input type=\"submit\" value=\"Guardar\" class=\"btn btn-primary btn-lg\"/>\r\n");
       out.write("                \r\n");
-      out.write("                <a href=\"index.jsp\">Regresar</a>\r\n");
+      out.write("                <a href=\"principal.jsp\">Regresar</a>\r\n");
       out.write("            </form>\r\n");
       out.write("            ");
 }
@@ -108,7 +108,7 @@ public final class Editar_jsp extends org.apache.jasper.runtime.HttpJspBase
        if(nom!=null && dni!=null){
            ps=con.prepareStatement("update persona set Nombres='"+nom+"', DNI='"+dni+"'where Id="+id);
            ps.executeUpdate();
-           response.sendRedirect("index.jsp");
+           response.sendRedirect("principal.jsp");
        }
        
        

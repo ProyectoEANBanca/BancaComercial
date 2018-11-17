@@ -45,7 +45,7 @@
                  <br>
                 <input type="submit" value="Guardar" class="btn btn-primary btn-lg"/>
                 
-                <a href="index.jsp">Regresar</a>
+                <a href="principal.jsp">Regresar</a>
             </form>
             <%}%>
         </div>
@@ -58,7 +58,7 @@
        if(nom!=null && dni!=null){
            ps=con.prepareStatement("update persona set Nombres='"+nom+"', DNI='"+dni+"'where Id="+id);
            ps.executeUpdate();
-           response.sendRedirect("index.jsp");
+           response.sendRedirect("principal.jsp");
        }
        
        

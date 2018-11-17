@@ -27,7 +27,7 @@
        int id=Integer.parseInt(request.getParameter("id"));
        ps=con.prepareStatement("delete from persona where Id="+id);
        ps.executeUpdate();
-       response.sendRedirect("index.jsp");
+       response.sendRedirect("principal.jsp");
        
        %>
     </body>

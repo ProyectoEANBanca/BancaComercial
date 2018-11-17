@@ -92,7 +92,7 @@ public final class Agregar_jsp extends org.apache.jasper.runtime.HttpJspBase
            ps=con.prepareStatement("insert into persona(Nombres, DNI)values('"+nom+"','"+dni+"')");
            ps.executeUpdate();
            JOptionPane.showMessageDialog(null,"Se Agrego Correctamete");           
-           response.sendRedirect("index.jsp");
+           response.sendRedirect("principal.jsp");
            
        }
        

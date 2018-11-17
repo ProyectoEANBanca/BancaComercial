@@ -57,73 +57,73 @@ public final class crearusuario_jsp extends org.apache.jasper.runtime.HttpJspBas
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("        <form action=\"ProductController\" method=\"POST\">\n");
-      out.write("            <table>\n");
-      out.write("                <thead>\n");
-      out.write("                    <tr>\n");
-      out.write("                        <th colspan=\"3\">Crear Cliente Nuevo</th>\n");
-      out.write("                    </tr>\n");
-      out.write("                </thead>\n");
-      out.write("                <tbody>\n");
-      out.write("                    <tr>\n");
-      out.write("                        <td>Nombre Completo\n");
-      out.write("                        <td>:</td>\n");
-      out.write("                        <td><input type=\"text\" name=\"nombrecompleto\"/></td>\n");
-      out.write("                    </tr>\n");
-      out.write("                    <tr>\n");
-      out.write("                        <td>Usuario</td>\n");
-      out.write("                        <td>:</td>\n");
-      out.write("                        <td><input type=\"text\" name=\"usuario\"/></td>\n");
-      out.write("                    </tr>\n");
-      out.write("                    <tr>\n");
-      out.write("                        <td>Contraseña</td>\n");
-      out.write("                        <td>:</td>\n");
-      out.write("                        <td><input type=\"password\" name=\"constrasena1\"/></td>\n");
-      out.write("                    </tr>\n");
-      out.write("                    <tr>\n");
-      out.write("                        <td>Nivel</td>\n");
-      out.write("                        <td>:</td>\n");
-      out.write("                        <td><input type=\"number\" name=\"nivel\"/></td>\n");
-      out.write("                    </tr>\n");
-      out.write("                    <tr>\n");
-      out.write("                        <td></td>\n");
-      out.write("                        <td></td>\n");
-      out.write("                        <td><input type=\"submit\" name=\"insert\" value=\"Insert\"/></td>\n");
-      out.write("                    </tr>\n");
-      out.write("                </tbody>\n");
-      out.write("                <tfoot>\n");
-      out.write("                    <tr>\n");
-      out.write("                        <td colspan=\"3\">\n");
-      out.write("                            <font color=\"green\">\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <form action=\"ProductController\" method=\"POST\">\r\n");
+      out.write("            <table>\r\n");
+      out.write("                <thead>\r\n");
+      out.write("                    <tr>\r\n");
+      out.write("                        <th colspan=\"3\">Crear Cliente Nuevo</th>\r\n");
+      out.write("                    </tr>\r\n");
+      out.write("                </thead>\r\n");
+      out.write("                <tbody>\r\n");
+      out.write("                    <tr>\r\n");
+      out.write("                        <td>Nombre Completo\r\n");
+      out.write("                        <td>:</td>\r\n");
+      out.write("                        <td><input type=\"text\" name=\"nombrecompleto\"/></td>\r\n");
+      out.write("                    </tr>\r\n");
+      out.write("                    <tr>\r\n");
+      out.write("                        <td>Usuario</td>\r\n");
+      out.write("                        <td>:</td>\r\n");
+      out.write("                        <td><input type=\"text\" name=\"usuario\"/></td>\r\n");
+      out.write("                    </tr>\r\n");
+      out.write("                    <tr>\r\n");
+      out.write("                        <td>Contraseña</td>\r\n");
+      out.write("                        <td>:</td>\r\n");
+      out.write("                        <td><input type=\"password\" name=\"constrasena1\"/></td>\r\n");
+      out.write("                    </tr>\r\n");
+      out.write("                    <tr>\r\n");
+      out.write("                        <td>Nivel</td>\r\n");
+      out.write("                        <td>:</td>\r\n");
+      out.write("                        <td><input type=\"number\" name=\"nivel\"/></td>\r\n");
+      out.write("                    </tr>\r\n");
+      out.write("                    <tr>\r\n");
+      out.write("                        <td></td>\r\n");
+      out.write("                        <td></td>\r\n");
+      out.write("                        <td><input type=\"submit\" name=\"insert\" value=\"Insert\"/></td>\r\n");
+      out.write("                    </tr>\r\n");
+      out.write("                </tbody>\r\n");
+      out.write("                <tfoot>\r\n");
+      out.write("                    <tr>\r\n");
+      out.write("                        <td colspan=\"3\">\r\n");
+      out.write("                            <font color=\"green\">\r\n");
       out.write("                            ");
       if (_jspx_meth_c_if_0(_jspx_page_context))
         return;
-      out.write(" \n");
-      out.write("                            </font>\n");
-      out.write("                            <font color=\"red\">\n");
+      out.write(" \r\n");
+      out.write("                            </font>\r\n");
+      out.write("                            <font color=\"red\">\r\n");
       out.write("                            ");
       if (_jspx_meth_c_if_1(_jspx_page_context))
         return;
-      out.write(" \n");
-      out.write("                            </font>\n");
-      out.write("                        </td>\n");
-      out.write("                    </tr>\n");
-      out.write("                </tfoot>\n");
-      out.write("            </table>\n");
-      out.write("        </form>\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write(" \r\n");
+      out.write("                            </font>\r\n");
+      out.write("                        </td>\r\n");
+      out.write("                    </tr>\r\n");
+      out.write("                </tfoot>\r\n");
+      out.write("            </table>\r\n");
+      out.write("        </form>\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -149,15 +149,15 @@ public final class crearusuario_jsp extends org.apache.jasper.runtime.HttpJspBas
     int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
     if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
+        out.write("\r\n");
         out.write("                                ");
         if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                                ");
         if (_jspx_meth_c_remove_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -221,15 +221,15 @@ public final class crearusuario_jsp extends org.apache.jasper.runtime.HttpJspBas
     int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
     if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
-        out.write("\n");
+        out.write("\r\n");
         out.write("                                ");
         if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_1, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                                ");
         if (_jspx_meth_c_remove_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_1, _jspx_page_context))
           return true;
-        out.write("\n");
+        out.write("\r\n");
         out.write("                            ");
         int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
