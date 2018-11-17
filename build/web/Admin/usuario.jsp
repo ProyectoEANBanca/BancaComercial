@@ -163,8 +163,13 @@
 
 
                 </main>
+                            
+                            
                 <section>
                     <div class="login" style="background-color: #fff !important ">
+                        
+                        
+<!--                        //implementar transaciones -->
                         <form action="Transaccion" method="POST">
                             <label class="entrada" style="background-color: #1a237e !important ">Id Cliente</label><br>
 
