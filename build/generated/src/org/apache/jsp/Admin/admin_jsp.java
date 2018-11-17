@@ -226,6 +226,9 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <th>\r\n");
       out.write("                                Fecha de Registro   \r\n");
       out.write("                            </th>\r\n");
+      out.write("                            <th>\r\n");
+      out.write("                                Saldo Disponible  \r\n");
+      out.write("                            </th>\r\n");
       out.write("\r\n");
       out.write("                        </tr>\r\n");
       out.write("\r\n");
@@ -262,6 +265,9 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
             out.write("                                <td>");
             out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${p.fecha}", java.lang.String.class, (PageContext)_jspx_page_context, null));
             out.write("</td>\r\n");
+            out.write("                                <td>");
+            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${p.saldodisponible}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+            out.write("</td>\r\n");
             out.write("                            </tr>\r\n");
             out.write("\r\n");
             out.write("                        ");
@@ -285,7 +291,12 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                    </table>\r\n");
       out.write("                </section>\r\n");
-      out.write("                <aside>Aside</aside>\r\n");
+      out.write("                        <aside>\r\n");
+      out.write("                     \r\n");
+      out.write("                            <a href=\"../crud/principal.jsp\" class=\"waves-effect waves-light btn-large\"><i class=\"material-icons left\">cloud</i>button</a>\r\n");
+      out.write("   \r\n");
+      out.write("                            \r\n");
+      out.write("                        </aside>\r\n");
       out.write("                <nav>Nav</nav>\r\n");
       out.write("                <footer>Footer</footer>\r\n");
       out.write("\r\n");

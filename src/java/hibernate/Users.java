@@ -16,16 +16,18 @@ public class Users  implements java.io.Serializable {
      private String contrasena;
      private int nivel;
      private Date fecha;
+     private int saldodisponible;
 
     public Users() {
     }
 
-    public Users(String nombreCompleto, String usuario, String contrasena, int nivel, Date fecha) {
+    public Users(String nombreCompleto, String usuario, String contrasena, int nivel, Date fecha,int saldodisponible) {
        this.nombreCompleto = nombreCompleto;
        this.usuario = usuario;
        this.contrasena = contrasena;
        this.nivel = nivel;
        this.fecha = fecha;
+       this.saldodisponible = saldodisponible;
     }
    
     public Integer getIdusuario() {
@@ -69,6 +71,14 @@ public class Users  implements java.io.Serializable {
     
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public int getSaldodisponible() {
+        return saldodisponible;
+    }
+
+    public void setSaldodisponible(int saldodisponible) {
+        this.saldodisponible = saldodisponible;
     }
 
 

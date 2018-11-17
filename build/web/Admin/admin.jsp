@@ -168,7 +168,7 @@
                                 Fecha de Registro   
                             </th>
                             <th>
-                                Opciones  
+                                Saldo Disponible  
                             </th>
 
                         </tr>
@@ -182,13 +182,19 @@
                                 <td>${p.contrasena}</td>
                                 <td>${p.nivel}</td>
                                 <td>${p.fecha}</td>
+                                <td>${p.saldodisponible}</td>
                             </tr>
 
                         </c:forEach> 
 
                     </table>
                 </section>
-                <aside>Aside</aside>
+                        <aside>
+                     
+                            <a href="../crud/principal.jsp" class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>button</a>
+   
+                            
+                        </aside>
                 <nav>Nav</nav>
                 <footer>Footer</footer>
 

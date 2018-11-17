@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/web/login.jsp</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/web/Admin/admin.jsp</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/web/Admin/usuario.jsp</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/src/java/com/bancacomercial/servlets/SERVLOGIN.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/web/Documentacion/DOCUMENTACIONBASE.txt</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/src/java/com/bancacomercial/clase/Database/Acceso.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/web/css/usuario.css</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/web/css/materialize.css</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/BancaComercial/web/crud/Editar.jsp</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/BancaComercial/web/crud/principal.jsp</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/BancaComercial/web/crud/Agregar.jsp</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/BancaComercial/web/Admin/admin.jsp</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/BancaComercial/BancaComercial/web/crud/Delete.jsp</file>
         </group>
     </open-files>
 </project-private>

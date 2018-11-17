@@ -46,6 +46,7 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_45299d59f23971d?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">b736df627cfd48</property>
     <property name="hibernate.connection.password">8db75918</property>
+    <property name="show_sql">true</property>
     <mapping resource="hibernate/Users.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
