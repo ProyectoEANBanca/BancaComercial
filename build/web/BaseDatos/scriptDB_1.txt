@@ -15,3 +15,9 @@ describe USUARIOJSP;
 insert into USUARIOJSP(nombreCompleto,usuario,contrasena)values("Sergio Medina Chaparro","sergio2018","sergio2018");
 
 select * from USUARIOJSP;
+
+
+
+// para eliminar columnas 
+
+ALTER TABLE heroku_45299d59f23971d.usuariojsp DROP COLUMN fecha;
