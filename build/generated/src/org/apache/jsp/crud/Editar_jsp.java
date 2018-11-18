@@ -58,6 +58,7 @@ public final class Editar_jsp extends org.apache.jasper.runtime.HttpJspBase
 
        //CONECTANOD A LA BASE DE DATOS:
        Connection con;
+       String idusuario;
         String url="jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_45299d59f23971d?zeroDateTimeBehavior=convertToNull";
        String Driver="com.mysql.jdbc.Driver";
        String user="b736df627cfd48";
@@ -67,7 +68,7 @@ public final class Editar_jsp extends org.apache.jasper.runtime.HttpJspBase
        //Emnpezamos Listando los Datos de la Tabla Usuario pero de la fila seleccionada
        PreparedStatement ps;
        ResultSet rs;
-       int idusuario=Integer.parseInt(request.getParameter("idusuario"));
+        idusuario=request.getParameter("idusuario");
        ps=con.prepareStatement("select * from users where idusuario="+idusuario);
        rs=ps.executeQuery();
        while(rs.next()){
@@ -80,7 +81,7 @@ public final class Editar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                \r\n");
       out.write("                  Id usuario:\r\n");
       out.write("                <input type=\"text\" readonly=\"\"  class=\"form-control\" value=\"");
-      out.print( rs.getInt("idusuario"));
+      out.print( rs.getString("idusuario"));
       out.write("\"/>\r\n");
       out.write("                \r\n");
       out.write("                Nombres:\r\n");

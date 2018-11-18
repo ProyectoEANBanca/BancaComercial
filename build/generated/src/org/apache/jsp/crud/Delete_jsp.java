@@ -61,11 +61,12 @@ public final class Delete_jsp extends org.apache.jasper.runtime.HttpJspBase
        String Driver="com.mysql.jdbc.Driver";
        String user="b736df627cfd48";
        String clave="8db75918";
+       String idusuario;
        Class.forName(Driver);
        con=DriverManager.getConnection(url,user,clave);
        //Emnpezamos Listando los Datos de la Tabla Usuario pero de la fila seleccionada
        PreparedStatement ps;       
-       int idusuario=Integer.parseInt(request.getParameter("idusuario"));
+        idusuario=request.getParameter("idusuario");
        ps=con.prepareStatement("delete from users where idusuario="+idusuario);
        ps.executeUpdate();
        response.sendRedirect("principal.jsp");
