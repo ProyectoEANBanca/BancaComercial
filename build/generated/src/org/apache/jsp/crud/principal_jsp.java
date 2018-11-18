@@ -74,7 +74,8 @@ public final class principal_jsp extends org.apache.jasper.runtime.HttpJspBase
         
       out.write("\r\n");
       out.write("        <div class=\"container\">            \r\n");
-      out.write("            <button type=\"button\" class=\"btn btn-success btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\"> Agregar Nuevo Cliente</button>\r\n");
+      out.write("            <button type=\"button\" class=\"btn btn-success btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\">Agregar Nuevo Cliente </button>\r\n");
+      out.write("            <button type=\"button\" class=\"btn btn-success btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\"><a href=\"../Admin/admin.jsp\">Inicio</a> </button>\r\n");
       out.write("            <div style=\"padding-left: 800px\">                  \r\n");
       out.write("                <input type=\"text\" class=\"form-control\" value=\"Buscar\"/>                            \r\n");
       out.write("            </div>\r\n");

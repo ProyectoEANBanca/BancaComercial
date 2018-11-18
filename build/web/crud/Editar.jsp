@@ -37,7 +37,7 @@
             <hr>
             <form action="" method="post" class="form-control" style="width: 500px; height: 400px">
                 
-                  Id usuario:
+                 Id usuario:
                 <input type="text" readonly=""  class="form-control" value="<%= rs.getString("idusuario")%>"/>
                 
                 Nombres:

@@ -28,7 +28,8 @@
             //Creamo la Tabla:     
         %>
         <div class="container">            
-            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal"> Agregar Nuevo Cliente</button>
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Agregar Nuevo Cliente </button>
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal"><a href="../Admin/admin.jsp">Inicio</a> </button>
             <div style="padding-left: 800px">                  
                 <input type="text" class="form-control" value="Buscar"/>                            
             </div>
