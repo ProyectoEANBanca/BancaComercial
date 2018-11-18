@@ -26,8 +26,8 @@
        //Emnpezamos Listando los Datos de la Tabla Usuario pero de la fila seleccionada
        PreparedStatement ps;
        ResultSet rs;
-       int id=Integer.parseInt(request.getParameter("id"));
-       ps=con.prepareStatement("select * from persona where Id="+id);
+       int idusuario=Integer.parseInt(request.getParameter("idusuario"));
+       ps=con.prepareStatement("select * from users where idusuario="+idusuario);
        rs=ps.executeQuery();
        while(rs.next()){
                          %>
@@ -35,13 +35,27 @@
             <h1>Modificar Registro</h1>
             <hr>
             <form action="" method="post" class="form-control" style="width: 500px; height: 400px">
-                ID:
-                <input type="text" readonly="" class="form-control" value="<%= rs.getInt("Id")%>"/>
-                 Nombres:
-                <input type="text" name="txtNom" class="form-control" value="<%= rs.getString("Nombres")%>"/><br>
+                
+                  Id usuario:
+                <input type="text" readonly=""  class="form-control" value="<%= rs.getString("idusuario")%>"/>
+                
+                Nombres:
+                <input type="text" readonly="" name="txtNom" class="form-control" value="<%= rs.getString("nombreCompleto")%>"/>
+                
+                 Usuario:
+                <input type="text" name="txtUsuario" class="form-control" value="<%= rs.getString("Usuario")%>"/><br>
+                
               
-                DNI:
-                <input type="text" name="txtDNI" class="form-control" value="<%= rs.getString("DNI")%>"/>
+                Contraseña:
+                <input type="text" name="txtContrasena" class="form-control" value="<%= rs.getString("contrasena")%>"/>
+                
+                  Nivel:
+                  <input type="text" name="txtNivel" class="form-control" value="<%= rs.getString("nivel")%>"/>
+                
+                  Saldo Disponible:
+                  <input type="text" name="txtSaldo" class="form-control" value="<%= rs.getString("saldodisponible")%>"/>
+                
+                
                  <br>
                 <input type="submit" value="Guardar" class="btn btn-primary btn-lg"/>
                 
@@ -52,11 +66,22 @@
     </body>
 </html>
 <%
-    String dni, nom;
-       dni=request.getParameter("txtDNI");
-       nom=request.getParameter("txtNom");
-       if(nom!=null && dni!=null){
-           ps=con.prepareStatement("update persona set Nombres='"+nom+"', DNI='"+dni+"'where Id="+id);
+                String nombreCompleto, usuario, contrasena,nivel, saldoDisponible;
+              
+                
+                nombreCompleto = request.getParameter("txtNom");
+                usuario = request.getParameter("txtUsuario");
+
+                contrasena = request.getParameter("txtContrasena");
+ 
+               nivel = request.getParameter("txtNivel");
+               saldoDisponible = request.getParameter("txtSaldo");
+                
+              
+                
+                
+       if(nombreCompleto != null && usuario != null  && contrasena != null && nivel != null && saldoDisponible != null){
+           ps=con.prepareStatement("update users set nombreCompleto='"+nombreCompleto+"', usuario='"+usuario+"', contrasena='"+contrasena+"', nivel='"+nivel+"', saldoDisponible='"+saldoDisponible+ "'where idusuario="+idusuario);
            ps.executeUpdate();
            response.sendRedirect("principal.jsp");
        }

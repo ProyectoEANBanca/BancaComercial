@@ -209,8 +209,13 @@ public final class usuario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("                </main>\r\n");
+      out.write("                            \r\n");
+      out.write("                            \r\n");
       out.write("                <section>\r\n");
       out.write("                    <div class=\"login\" style=\"background-color: #fff !important \">\r\n");
+      out.write("                        \r\n");
+      out.write("                        \r\n");
+      out.write("<!--                        //implementar transaciones -->\r\n");
       out.write("                        <form action=\"Transaccion\" method=\"POST\">\r\n");
       out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">Id Cliente</label><br>\r\n");
       out.write("\r\n");

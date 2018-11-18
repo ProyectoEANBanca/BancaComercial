@@ -44,6 +44,7 @@ public final class principal_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
@@ -56,10 +57,10 @@ public final class principal_jsp extends org.apache.jasper.runtime.HttpJspBase
 
             //CONECTANOD A LA BASE DE DATOS:
             Connection con;
-             String url="jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_45299d59f23971d?zeroDateTimeBehavior=convertToNull";
-       String Driver="com.mysql.jdbc.Driver";
-       String user="b736df627cfd48";
-       String clave="8db75918";
+            String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_45299d59f23971d?zeroDateTimeBehavior=convertToNull";
+            String Driver = "com.mysql.jdbc.Driver";
+            String user = "b736df627cfd48";
+            String clave = "8db75918";
             Class.forName(Driver);
             con = DriverManager.getConnection(url, user, clave);
             PreparedStatement ps;
@@ -67,7 +68,8 @@ public final class principal_jsp extends org.apache.jasper.runtime.HttpJspBase
             Statement smt;
             ResultSet rs;
             smt = con.createStatement();
-            rs = smt.executeQuery("select * from persona");
+            //estamos consultando la base de datos de users
+            rs = smt.executeQuery("select * from users");
             //Creamo la Tabla:     
         
       out.write("\r\n");
@@ -77,52 +79,63 @@ public final class principal_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <input type=\"text\" class=\"form-control\" value=\"Buscar\"/>                            \r\n");
       out.write("            </div>\r\n");
       out.write("        </div>  \r\n");
-      out.write("              \r\n");
+      out.write("\r\n");
       out.write("        <br>\r\n");
       out.write("        <div class=\"container\">               \r\n");
       out.write("            <!--<a  class=\"btn btn-success\" href=\"Agregar.jsp\">Nuevo Registro</a> Esto es Cuando se Crea un nuevo Archivo Agregar.jsp -->         \r\n");
-      out.write("             <table class=\"table table-bordered\"  id=\"tablaDatos\">\r\n");
-      out.write("                    <thead>\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <th class=\"text-center\">Id</th>\r\n");
-      out.write("                            <th>Nombres</th>\r\n");
-      out.write("                            <th class=\"text-center\">DNI</th>\r\n");
-      out.write("                            <th class=\"text-center\">Acciones</th>\r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                    </thead>\r\n");
-      out.write("                    <tbody id=\"tbodys\">\r\n");
-      out.write("                        ");
+      out.write("            <table class=\"table table-bordered\"  id=\"tablaDatos\">\r\n");
+      out.write("                <thead>\r\n");
+      out.write("                    <tr>\r\n");
+      out.write("                        <th class=\"text-center\">Id</th>\r\n");
+      out.write("                        <th>Nombre Competo</th>\r\n");
+      out.write("                        <th class=\"text-center\">Usuario</th>\r\n");
+      out.write("                        <th class=\"text-center\">Contraseña</th>\r\n");
+      out.write("                        <th class=\"text-center\">nivel</th>\r\n");
+      out.write("                        <th class=\"text-center\">SaldoDisponible</th>\r\n");
+      out.write("                    </tr>\r\n");
+      out.write("                </thead>\r\n");
+      out.write("                <tbody id=\"tbodys\">\r\n");
+      out.write("                    ");
 
-                            while (rs.next()) {
-                        
+                        while (rs.next()) {
+                    
       out.write("\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <td class=\"text-center\">");
-      out.print( rs.getInt("Id"));
+      out.write("                    <tr>\r\n");
+      out.write("                        <td class=\"text-center\">");
+      out.print( rs.getInt("idusuario"));
       out.write("</td>\r\n");
-      out.write("                            <td>");
-      out.print( rs.getString("Nombres"));
+      out.write("                        <td>");
+      out.print( rs.getString("nombreCompleto"));
       out.write("</td>\r\n");
-      out.write("                            <td class=\"text-center\">");
-      out.print( rs.getString("DNI"));
+      out.write("                        <td class=\"text-center\">");
+      out.print( rs.getString("usuario"));
       out.write("</td>\r\n");
-      out.write("                            <td class=\"text-center\">\r\n");
-      out.write("                                \r\n");
-      out.write("                                <!-- <input type=\"hidden\" value=\"<//%= rs.getInt(\"Id_Usuario\")%>\" id=\"Editar\"/>\r\n");
-      out.write("                                <input type=\"submit\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal1\" value=\"Editar\"/>  -->\r\n");
-      out.write("                                <a href=\"Editar.jsp?id=");
-      out.print( rs.getInt("Id"));
+      out.write("                        <td class=\"text-center\">");
+      out.print( rs.getString("contrasena"));
+      out.write("</td>\r\n");
+      out.write("                        <td class=\"text-center\">");
+      out.print( rs.getString("nivel"));
+      out.write("</td>\r\n");
+      out.write("                        <td class=\"text-center\">");
+      out.print( rs.getString("saldodisponible"));
+      out.write("</td>\r\n");
+      out.write("                        <td class=\"text-center\">\r\n");
+      out.write("\r\n");
+      out.write("                            <!-- <input type=\"hidden\" value=\"<//%= rs.getInt(\"Id_Usuario\")%>\" id=\"Editar\"/>\r\n");
+      out.write("                            <input type=\"submit\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal1\" value=\"Editar\"/>  -->\r\n");
+      out.write("                            <a href=\"Editar.jsp?id=");
+      out.print( rs.getInt("idusuario"));
       out.write("\" class=\"btn btn-primary\">Editar</a>\r\n");
-      out.write("                                <a href=\"Delete.jsp?id=");
-      out.print( rs.getInt("Id"));
+      out.write("                            <a href=\"Delete.jsp?id=");
+      out.print( rs.getInt("idusuario"));
       out.write("\" class=\"btn btn-danger\">Delete</a>\r\n");
-      out.write("                            </td>\r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                        ");
+      out.write("                        </td>\r\n");
+      out.write("                    </tr>\r\n");
+      out.write("                    ");
 }
       out.write("\r\n");
-      out.write("                </table>\r\n");
-      out.write("            </div>        \r\n");
+      out.write("            </table>\r\n");
+      out.write("        </div>        \r\n");
       out.write("        <div class=\"container\">          \r\n");
       out.write("            <div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">\r\n");
       out.write("                <div class=\"modal-dialog\" role=\"document\" style=\"z-index: 9999; width: 450px\">\r\n");
@@ -133,11 +146,28 @@ public final class principal_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <div class=\"modal-body\">\r\n");
       out.write("                            <form action=\"\" method=\"post\">\r\n");
       out.write("                                <label>Nombres:</label> \r\n");
-      out.write("                                <input type=\"text\" name=\"txtNom\" class=\"form-control\"/><br>\r\n");
-      out.write("                                <label>DNI:</label> \r\n");
-      out.write("                                <input type=\"text\" name=\"txtDNI\" class=\"form-control\"/>                                      \r\n");
+      out.write("                                <input type=\"text\" name=\"txtNom\" class=\"form-control\"/>\r\n");
+      out.write("                                <br>\r\n");
+      out.write("\r\n");
+      out.write("                                <label>Usuario:</label> \r\n");
+      out.write("                                <input type=\"text\" name=\"txtUsuario\" class=\"form-control\"/> \r\n");
+      out.write("                                <br>\r\n");
+      out.write("                                <label>Contraseña </label> \r\n");
+      out.write("                                <input type=\"text\" name=\"txtContrasena\" class=\"form-control\"/>\r\n");
+      out.write("\r\n");
+      out.write("                                <br>\r\n");
+      out.write("                                <label>Nivel:</label> \r\n");
+      out.write("                                <input type=\"number\" name=\"txtNivel\" class=\"form-control\"/> \r\n");
+      out.write("                                <br>\r\n");
+      out.write("                                <label>Saldo Disponible</label> \r\n");
+      out.write("                                <input type=\"number\" name=\"txtSaldo\" class=\"form-control\"/> \r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("                                <div class=\"modal-footer\">\r\n");
-      out.write("                                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>                            \r\n");
+      out.write("                                    <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Cerrar</button>                            \r\n");
       out.write("                                    <input type=\"submit\" value=\"Guardar\" class=\"btn btn-primary\"/>\r\n");
       out.write("                                </div>\r\n");
       out.write("                            </form>\r\n");
@@ -145,19 +175,32 @@ public final class principal_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>                    \r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
-      out.write("            ");
+      out.write("               ");
 
-                String dni, nom;
-                nom = request.getParameter("txtNom");
-                dni = request.getParameter("txtDNI");
-                if (nom != null && dni != null) {
-                    ps = con.prepareStatement("insert into persona(Nombres, DNI)values('" + nom + "','" + dni + "')");
+                String nombreCompleto, usuario, contrasena,nivel, saldoDisponible;
+       
+                
+                nombreCompleto = request.getParameter("txtNom");
+                usuario = request.getParameter("txtUsuario");
+
+                contrasena = request.getParameter("txtContrasena");
+
+                 nivel = request.getParameter("txtNivel");
+                
+                saldoDisponible = (request.getParameter("txtSaldo"));
+                
+          // queda pendiente por errores 
+
+                if (nombreCompleto != null && usuario != null  && contrasena != null && nivel != null && saldoDisponible != null) {
+                    ps = con.prepareStatement("insert into users(nombreCompleto, usuario,contrasena, nivel,saldoDisponible )values('" + nombreCompleto + "','" + usuario + "','"+contrasena+ "','"+nivel+ "','"+ saldoDisponible+ "')");
                     ps.executeUpdate();
                     response.sendRedirect("principal.jsp");
 
                 }
             
       out.write("\r\n");
+      out.write("     \r\n");
+      out.write("            \r\n");
       out.write("        </div>        \r\n");
       out.write("        <script src=\"../js/jquery.js\" type=\"text/javascript\"></script>             \r\n");
       out.write("        <script src=\"../js/bootstrap.min.js\" type=\"text/javascript\"></script>        \r\n");

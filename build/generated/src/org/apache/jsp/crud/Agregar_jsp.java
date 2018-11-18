@@ -62,10 +62,25 @@ public final class Agregar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <h1>Agregar Registro</h1>\r\n");
       out.write("            <hr>\r\n");
       out.write("            <form action=\"\" method=\"post\" class=\"form-control\" style=\"width: 500px; height: 400px\">\r\n");
+      out.write("                \r\n");
+      out.write("                \r\n");
       out.write("                Nombres:\r\n");
       out.write("                <input type=\"text\" name=\"txtNom\" class=\"form-control\"/><br>\r\n");
-      out.write("                DNI:\r\n");
-      out.write("                <input type=\"text\" name=\"txtDNI\" class=\"form-control\"/>\r\n");
+      out.write("                \r\n");
+      out.write("                \r\n");
+      out.write("                Usuario:\r\n");
+      out.write("                <input type=\"text\" name=\"txtUsuario\" class=\"form-control\"/>\r\n");
+      out.write("                \r\n");
+      out.write("                 Contraseña:\r\n");
+      out.write("                <input type=\"text\" name=\"txtContrasena\" class=\"form-control\"/>\r\n");
+      out.write("                \r\n");
+      out.write("                  Nivel:\r\n");
+      out.write("                <input type=\"text\" name=\"txtNivel\" class=\"form-control\"/>\r\n");
+      out.write("                \r\n");
+      out.write("                  Saldo Disponible:\r\n");
+      out.write("                <input type=\"text\" name=\"txtSaldo\" class=\"form-control\"/>\r\n");
+      out.write("                \r\n");
+      out.write("                \r\n");
       out.write("                <br>\r\n");
       out.write("                <input type=\"submit\" value=\"Guardar\" class=\"btn btn-primary btn-lg\"/>\r\n");
       out.write("                <a href=\"principal.jsp\">Regresar</a>\r\n");
@@ -85,11 +100,22 @@ public final class Agregar_jsp extends org.apache.jasper.runtime.HttpJspBase
        Class.forName(Driver);
        con=DriverManager.getConnection(url,user,clave);
        PreparedStatement ps;
-       String dni, nom;
-       nom=request.getParameter("txtNom");
-       dni=request.getParameter("txtDNI");      
-       if(nom!=null && dni!=null){
-           ps=con.prepareStatement("insert into persona(Nombres, DNI)values('"+nom+"','"+dni+"')");
+       
+                String nombreCompleto, usuario, contrasena,nivel, saldoDisponible;
+             
+                
+                nombreCompleto = request.getParameter("txtNom");
+                usuario = request.getParameter("txtUsuario");
+
+                contrasena = request.getParameter("txtContrasena");
+
+                nivel = request.getParameter("txtNivel");
+                
+                saldoDisponible = request.getParameter("txtSaldo");
+       
+       
+       if(nombreCompleto != null && usuario != null  && contrasena != null && nivel != null && saldoDisponible != null){
+           ps=con.prepareStatement("insert into users(nombreCompleto, usuario,contrasena, nivel,saldoDisponible)values('" + nombreCompleto + "','" + usuario + "','"+contrasena+ "','"+nivel+ "','"+ saldoDisponible+ "')");
            ps.executeUpdate();
            JOptionPane.showMessageDialog(null,"Se Agrego Correctamete");           
            response.sendRedirect("principal.jsp");

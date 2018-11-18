@@ -24,8 +24,8 @@
        con=DriverManager.getConnection(url,user,clave);
        //Emnpezamos Listando los Datos de la Tabla Usuario pero de la fila seleccionada
        PreparedStatement ps;       
-       int id=Integer.parseInt(request.getParameter("id"));
-       ps=con.prepareStatement("delete from persona where Id="+id);
+       int idusuario=Integer.parseInt(request.getParameter("idusuario"));
+       ps=con.prepareStatement("delete from users where idusuario="+idusuario);
        ps.executeUpdate();
        response.sendRedirect("principal.jsp");
        

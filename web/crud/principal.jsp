@@ -1,3 +1,4 @@
+
 <%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -56,8 +57,8 @@
                         <td><%= rs.getString("nombreCompleto")%></td>
                         <td class="text-center"><%= rs.getString("usuario")%></td>
                         <td class="text-center"><%= rs.getString("contrasena")%></td>
-                        <td class="text-center"><%= rs.getInt("nivel")%></td>
-                        <td class="text-center"><%= rs.getInt("saldodisponible")%></td>
+                        <td class="text-center"><%= rs.getString("nivel")%></td>
+                        <td class="text-center"><%= rs.getString("saldodisponible")%></td>
                         <td class="text-center">
 
                             <!-- <input type="hidden" value="<//%= rs.getInt("Id_Usuario")%>" id="Editar"/>
@@ -108,27 +109,30 @@
                     </div>                    
                 </div>
             </div>
-            <%
-                String nombreCompleto, usuario, contrasena;
-                int nivel, saldoDisponible;
+               <%
+                String nombreCompleto, usuario, contrasena,nivel, saldoDisponible;
+       
+                
                 nombreCompleto = request.getParameter("txtNom");
                 usuario = request.getParameter("txtUsuario");
 
                 contrasena = request.getParameter("txtContrasena");
 
-                nivel = Integer.parseInt(request.getParameter("txtNivel"));
+                 nivel = request.getParameter("txtNivel");
                 
-                saldoDisponible = Integer.parseInt(request.getParameter("txtSaldo"));
+                saldoDisponible = (request.getParameter("txtSaldo"));
                 
           // queda pendiente por errores 
 
-                if (nombreCompleto != null && usuario != null  && contrasena != null ) {
-                    ps = con.prepareStatement("insert into persona(Nombres, DNI)values('" + nom + "','" + dni + "')");
+                if (nombreCompleto != null && usuario != null  && contrasena != null && nivel != null && saldoDisponible != null) {
+                    ps = con.prepareStatement("insert into users(nombreCompleto, usuario,contrasena, nivel,saldoDisponible )values('" + nombreCompleto + "','" + usuario + "','"+contrasena+ "','"+nivel+ "','"+ saldoDisponible+ "')");
                     ps.executeUpdate();
                     response.sendRedirect("principal.jsp");
 
                 }
             %>
+     
+            
         </div>        
         <script src="../js/jquery.js" type="text/javascript"></script>             
         <script src="../js/bootstrap.min.js" type="text/javascript"></script>        

@@ -20,10 +20,25 @@
             <h1>Agregar Registro</h1>
             <hr>
             <form action="" method="post" class="form-control" style="width: 500px; height: 400px">
+                
+                
                 Nombres:
                 <input type="text" name="txtNom" class="form-control"/><br>
-                DNI:
-                <input type="text" name="txtDNI" class="form-control"/>
+                
+                
+                Usuario:
+                <input type="text" name="txtUsuario" class="form-control"/>
+                
+                 Contraseña:
+                <input type="text" name="txtContrasena" class="form-control"/>
+                
+                  Nivel:
+                <input type="text" name="txtNivel" class="form-control"/>
+                
+                  Saldo Disponible:
+                <input type="text" name="txtSaldo" class="form-control"/>
+                
+                
                 <br>
                 <input type="submit" value="Guardar" class="btn btn-primary btn-lg"/>
                 <a href="principal.jsp">Regresar</a>
@@ -43,11 +58,22 @@
        Class.forName(Driver);
        con=DriverManager.getConnection(url,user,clave);
        PreparedStatement ps;
-       String dni, nom;
-       nom=request.getParameter("txtNom");
-       dni=request.getParameter("txtDNI");      
-       if(nom!=null && dni!=null){
-           ps=con.prepareStatement("insert into persona(Nombres, DNI)values('"+nom+"','"+dni+"')");
+       
+                String nombreCompleto, usuario, contrasena,nivel, saldoDisponible;
+             
+                
+                nombreCompleto = request.getParameter("txtNom");
+                usuario = request.getParameter("txtUsuario");
+
+                contrasena = request.getParameter("txtContrasena");
+
+                nivel = request.getParameter("txtNivel");
+                
+                saldoDisponible = request.getParameter("txtSaldo");
+       
+       
+       if(nombreCompleto != null && usuario != null  && contrasena != null && nivel != null && saldoDisponible != null){
+           ps=con.prepareStatement("insert into users(nombreCompleto, usuario,contrasena, nivel,saldoDisponible)values('" + nombreCompleto + "','" + usuario + "','"+contrasena+ "','"+nivel+ "','"+ saldoDisponible+ "')");
            ps.executeUpdate();
            JOptionPane.showMessageDialog(null,"Se Agrego Correctamete");           
            response.sendRedirect("principal.jsp");
