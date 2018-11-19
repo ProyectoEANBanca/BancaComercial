@@ -4,6 +4,11 @@
     Author     : SERGIO Y CAMILO
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="com.mysql.jdbc.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true" %>
 
@@ -79,6 +84,25 @@
         </style>
     </head>
     <body >
+            <%
+     
+            //CONECTANOD A LA BASE DE DATOS:
+            Connection con;
+            String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_45299d59f23971d?zeroDateTimeBehavior=convertToNull";
+            String Driver = "com.mysql.jdbc.Driver";
+            String user = "b736df627cfd48";
+            String clave = "8db75918";
+            Class.forName(Driver);
+            con = DriverManager.getConnection(url, user, clave);
+            PreparedStatement ps;
+            //Emnpezamos Listando los Datos de la Tabla Usuario
+            Statement smt;
+            ResultSet rs;
+            smt = con.createStatement();
+            //estamos consultando la base de datos de users
+            rs = smt.executeQuery("select * from users");
+            //Creamo la Tabla:     
+        %>
 
         <!-- navbar -->
         <header>
@@ -130,71 +154,65 @@
             <div id="content">
                 <main>
 
-                    <!--implementando nuestra tarjeta de credito-->
 
-                    <div class="card">
-                        <div class="card__front card__part">
-                            <img class="card__front-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
-                            <img class="card__front-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
-                            <p class="card_numer">1245 1548 1254 6258</p>
-                            <div class="card__space-75">
-                                <span class="card__label">Card holder</span>
-                                <p class="card__info"><%= sesion.getAttribute("nombre")%></p>
-                            </div>
-                            <div class="card__space-25">
-                                <span class="card__label">Expires</span>
-                                <p class="card__info">10/25</p>
-                            </div>
-                        </div>
 
-                        <div class="card__back card__part">
-                            <div class="card__black-line"></div>
-                            <div class="card__back-content">
-                                <div class="card__secret">
-                                    <p class="card__secret--last">420</p>
+                    <div class="row">
+
+                        <div class="col s6">     <!--implementando nuestra tarjeta de credito-->
+
+                            <div class="card">
+                                <div class="card__front card__part">
+                                    <img class="card__front-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
+                                    <img class="card__front-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
+                                    <p class="card_numer">1245 1548 1254 6258</p>
+                                    <div class="card__space-75">
+                                        <span class="card__label">Card holder</span>
+                                        <p class="card__info"><%= sesion.getAttribute("nombre")%></p>
+                                    </div>
+                                    <div class="card__space-25">
+                                        <span class="card__label">Expires</span>
+                                        <p class="card__info">10/25</p>
+                                    </div>
                                 </div>
-                                <img class="card__back-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
-                                <img class="card__back-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
+
+                                <div class="card__back card__part">
+                                    <div class="card__black-line"></div>
+                                    <div class="card__back-content">
+                                        <div class="card__secret">
+                                            <p class="card__secret--last">420</p>
+                                        </div>
+                                        <img class="card__back-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
+                                        <img class="card__back-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
+
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
-
+                        <div class="col s6">6-columns (one-half)</div>
                     </div>
 
 
                 </main>
-                            
-                            
+
+
                 <section>
                     <div class="login" style="background-color: #fff !important ">
-                        
-                        
-<!--                        //implementar transaciones -->
-                        <form action="Transaccion" method="POST">
-                            <label class="entrada" style="background-color: #1a237e !important ">Id Cliente</label><br>
-
-                            <input  type="number" placeholder="Id Cliente" name="idcliente" ><br>
 
 
-                            <label class="entrada" style="background-color: #1a237e !important ">Numero Producto</label><br>
-                            <input  type="number" placeholder="producto" name="producto"><br>
+                        <!--                        //implementar transaciones -->
+                        <form action="Transferencias2/GrabarConsigna.jsp" method="post">
+                            <h6 style="align-content: center; color: blue">Datos de la Consigna</h6>
 
+                            <td><label for="Vcliente">Identificación de tu cuenta  </label></td>
+                            <input type="text" name="Vcliente" id="Identificacion del cliente"><br>
 
-                            <label class="entrada" style="background-color: #1a237e !important ">Tipo Transaccion</label><br>
-                            <input  type="number" placeholder="tipo" name="tipo"><br>
+                            <td><label for="Vcliente">Valor a consignar  </label></td>
+                            <input type="text" name="VValor" id="Valor a consignar"><br>
 
-
-                            <label class="entrada" style="background-color: #1a237e !important ">Valor</label><br>
-                            <input  type="number" placeholder="valor" name="valor"><br>
-
-                            <label class="entrada" style="background-color: #1a237e !important ">NRO_factura</label><br>
-                            <input  type="number" placeholder="nro_factura" name="nfacturas"><br>
-
-
-
-                            <input class="btn-floating btn-large pulse" type="submit" name="btnIniciar" value="Login">
-
-
+                            <tr>
+                                <td colspan="2" align="center"><input type="submit" name="button" id="button" value="Transferir"></td>
+                            </tr>
 
                         </form>
 
@@ -204,38 +222,37 @@
 
 
                     <%
-    // los datos que recibe la vista del servlets
-    //HttpSession sesion = request.getSession();
-    int nivel = 0;
+                        // los datos que recibe la vista del servlets
+                        //HttpSession sesion = request.getSession();
+                        int nivel = 0;
 
-    // validar el nivel del servlet
-    if (request.getAttribute("nivel") != null) {
-        // este valor nos llega como objeto y hat que pasarla a Integer
-        nivel = (Integer) request.getAttribute("nivel");
-        if (nivel == 1) {
+                        // validar el nivel del servlet
+                        if (request.getAttribute("nivel") != null) {
+                            // este valor nos llega como objeto y hat que pasarla a Integer
+                            nivel = (Integer) request.getAttribute("nivel");
+                            if (nivel == 1) {
 
-            // aqui vamos a crear la variale la session
-            sesion.setAttribute("nombre", request.getAttribute("nombre"));
-            sesion.setAttribute("nivel", nivel);
-            //si es adminstrador lo redirecionamos a la pagina del administrador
-            response.sendRedirect("Admin/usuario.jsp");
+                                // aqui vamos a crear la variale la session
+                                sesion.setAttribute("nombre", request.getAttribute("nombre"));
+                                sesion.setAttribute("nivel", nivel);
+                                //si es adminstrador lo redirecionamos a la pagina del administrador
+                                response.sendRedirect("Admin/usuario.jsp");
 
-        }
-        else if(nivel == 2){
-             // aqui vamos a crear la variale la session
-            sesion.setAttribute("nombre", request.getAttribute("nombre"));
-            sesion.setAttribute("nivel", nivel);
-            //si es adminstrador lo redirecionamos a la pagina del administrador
-            response.sendRedirect("Admin/usuario.jsp");
-                
-        }
+                            } else if (nivel == 2) {
+                                // aqui vamos a crear la variale la session
+                                sesion.setAttribute("nombre", request.getAttribute("nombre"));
+                                sesion.setAttribute("nivel", nivel);
+                                //si es adminstrador lo redirecionamos a la pagina del administrador
+                                response.sendRedirect("Admin/usuario.jsp");
 
-    }
+                            }
 
-    if (request.getParameter("cerrar") != null) {
-        session.invalidate();
-        //sesion.invalidate();
-    }
+                        }
+
+                        if (request.getParameter("cerrar") != null) {
+                            session.invalidate();
+                            //sesion.invalidate();
+                        }
 
 
                     %>
@@ -245,7 +262,7 @@
 
                 </section>
                 <aside>Aside</aside>
-                <nav>Nav</nav>
+
                 <footer>Footer</footer>
 
             </div>

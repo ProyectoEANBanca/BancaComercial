@@ -64,7 +64,7 @@
 
                             <!-- <input type="hidden" value="<//%= rs.getInt("Id_Usuario")%>" id="Editar"/>
                             <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
-                            <a href="Editar.jsp?id=<%= rs.getInt("idusuario")%>" class="btn btn-primary">Editar</a>
+                            <a href="Editar.jsp?id=<%= rs.getString("idusuario")%>" class="btn btn-primary">Editar</a>
                             <a href="Delete.jsp?id=<%= rs.getInt("idusuario")%>" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>

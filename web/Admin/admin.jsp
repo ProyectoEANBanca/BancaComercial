@@ -135,7 +135,13 @@
             <!--Aqui vamos agregar las grid para los modulos--> 
             <div id="content">
                 <main>
-
+                    
+                    
+                    <!--reportes jasper-->
+                    
+                    <a href="../Admin/report1.html" style="text-align: center; color: #000" target="_blank"> <h4>Reportes</h4> </a>
+                    
+                    
                 </main>
                 <section>
                     <table cellpadding="2" cellspacing="2" border="1">
@@ -195,7 +201,7 @@
    
                             
                         </aside>
-                <nav>Nav</nav>
+      
                 <footer>Footer</footer>
 
             </div>

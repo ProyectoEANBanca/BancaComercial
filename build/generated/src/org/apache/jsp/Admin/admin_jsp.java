@@ -192,7 +192,13 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <!--Aqui vamos agregar las grid para los modulos--> \r\n");
       out.write("            <div id=\"content\">\r\n");
       out.write("                <main>\r\n");
-      out.write("\r\n");
+      out.write("                    \r\n");
+      out.write("                    \r\n");
+      out.write("                    <!--reportes jasper-->\r\n");
+      out.write("                    \r\n");
+      out.write("                    <a href=\"../Admin/report1.html\" style=\"text-align: center; color: #000\" target=\"_blank\"> <h4>Reportes</h4> </a>\r\n");
+      out.write("                    \r\n");
+      out.write("                    \r\n");
       out.write("                </main>\r\n");
       out.write("                <section>\r\n");
       out.write("                    <table cellpadding=\"2\" cellspacing=\"2\" border=\"1\">\r\n");
@@ -297,7 +303,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("   \r\n");
       out.write("                            \r\n");
       out.write("                        </aside>\r\n");
-      out.write("                <nav>Nav</nav>\r\n");
+      out.write("      \r\n");
       out.write("                <footer>Footer</footer>\r\n");
       out.write("\r\n");
       out.write("            </div>\r\n");

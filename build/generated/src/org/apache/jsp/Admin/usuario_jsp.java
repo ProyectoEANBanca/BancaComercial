@@ -3,6 +3,11 @@ package org.apache.jsp.Admin;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import com.mysql.jdbc.PreparedStatement;
+import java.sql.DriverManager;
+import java.sql.Connection;
 
 public final class usuario_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -41,6 +46,11 @@ public final class usuario_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -119,6 +129,27 @@ public final class usuario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </style>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body >\r\n");
+      out.write("            ");
+
+     
+            //CONECTANOD A LA BASE DE DATOS:
+            Connection con;
+            String url = "jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_45299d59f23971d?zeroDateTimeBehavior=convertToNull";
+            String Driver = "com.mysql.jdbc.Driver";
+            String user = "b736df627cfd48";
+            String clave = "8db75918";
+            Class.forName(Driver);
+            con = DriverManager.getConnection(url, user, clave);
+            PreparedStatement ps;
+            //Emnpezamos Listando los Datos de la Tabla Usuario
+            Statement smt;
+            ResultSet rs;
+            smt = con.createStatement();
+            //estamos consultando la base de datos de users
+            rs = smt.executeQuery("select * from users");
+            //Creamo la Tabla:     
+        
+      out.write("\r\n");
       out.write("\r\n");
       out.write("        <!-- navbar -->\r\n");
       out.write("        <header>\r\n");
@@ -174,73 +205,67 @@ public final class usuario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div id=\"content\">\r\n");
       out.write("                <main>\r\n");
       out.write("\r\n");
-      out.write("                    <!--implementando nuestra tarjeta de credito-->\r\n");
       out.write("\r\n");
-      out.write("                    <div class=\"card\">\r\n");
-      out.write("                        <div class=\"card__front card__part\">\r\n");
-      out.write("                            <img class=\"card__front-square card__square\" src=\"https://image.ibb.co/cZeFjx/little_square.png\">\r\n");
-      out.write("                            <img class=\"card__front-logo card__logo\" src=\"https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png\">\r\n");
-      out.write("                            <p class=\"card_numer\">1245 1548 1254 6258</p>\r\n");
-      out.write("                            <div class=\"card__space-75\">\r\n");
-      out.write("                                <span class=\"card__label\">Card holder</span>\r\n");
-      out.write("                                <p class=\"card__info\">");
+      out.write("\r\n");
+      out.write("                    <div class=\"row\">\r\n");
+      out.write("\r\n");
+      out.write("                        <div class=\"col s6\">     <!--implementando nuestra tarjeta de credito-->\r\n");
+      out.write("\r\n");
+      out.write("                            <div class=\"card\">\r\n");
+      out.write("                                <div class=\"card__front card__part\">\r\n");
+      out.write("                                    <img class=\"card__front-square card__square\" src=\"https://image.ibb.co/cZeFjx/little_square.png\">\r\n");
+      out.write("                                    <img class=\"card__front-logo card__logo\" src=\"https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png\">\r\n");
+      out.write("                                    <p class=\"card_numer\">1245 1548 1254 6258</p>\r\n");
+      out.write("                                    <div class=\"card__space-75\">\r\n");
+      out.write("                                        <span class=\"card__label\">Card holder</span>\r\n");
+      out.write("                                        <p class=\"card__info\">");
       out.print( sesion.getAttribute("nombre"));
       out.write("</p>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                            <div class=\"card__space-25\">\r\n");
-      out.write("                                <span class=\"card__label\">Expires</span>\r\n");
-      out.write("                                <p class=\"card__info\">10/25</p>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("\r\n");
-      out.write("                        <div class=\"card__back card__part\">\r\n");
-      out.write("                            <div class=\"card__black-line\"></div>\r\n");
-      out.write("                            <div class=\"card__back-content\">\r\n");
-      out.write("                                <div class=\"card__secret\">\r\n");
-      out.write("                                    <p class=\"card__secret--last\">420</p>\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    <div class=\"card__space-25\">\r\n");
+      out.write("                                        <span class=\"card__label\">Expires</span>\r\n");
+      out.write("                                        <p class=\"card__info\">10/25</p>\r\n");
+      out.write("                                    </div>\r\n");
       out.write("                                </div>\r\n");
-      out.write("                                <img class=\"card__back-square card__square\" src=\"https://image.ibb.co/cZeFjx/little_square.png\">\r\n");
-      out.write("                                <img class=\"card__back-logo card__logo\" src=\"https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png\">\r\n");
+      out.write("\r\n");
+      out.write("                                <div class=\"card__back card__part\">\r\n");
+      out.write("                                    <div class=\"card__black-line\"></div>\r\n");
+      out.write("                                    <div class=\"card__back-content\">\r\n");
+      out.write("                                        <div class=\"card__secret\">\r\n");
+      out.write("                                            <p class=\"card__secret--last\">420</p>\r\n");
+      out.write("                                        </div>\r\n");
+      out.write("                                        <img class=\"card__back-square card__square\" src=\"https://image.ibb.co/cZeFjx/little_square.png\">\r\n");
+      out.write("                                        <img class=\"card__back-logo card__logo\" src=\"https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png\">\r\n");
+      out.write("\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                </div>\r\n");
       out.write("\r\n");
       out.write("                            </div>\r\n");
       out.write("                        </div>\r\n");
-      out.write("\r\n");
+      out.write("                        <div class=\"col s6\">6-columns (one-half)</div>\r\n");
       out.write("                    </div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("                </main>\r\n");
-      out.write("                            \r\n");
-      out.write("                            \r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("                <section>\r\n");
       out.write("                    <div class=\"login\" style=\"background-color: #fff !important \">\r\n");
-      out.write("                        \r\n");
-      out.write("                        \r\n");
-      out.write("<!--                        //implementar transaciones -->\r\n");
-      out.write("                        <form action=\"Transaccion\" method=\"POST\">\r\n");
-      out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">Id Cliente</label><br>\r\n");
-      out.write("\r\n");
-      out.write("                            <input  type=\"number\" placeholder=\"Id Cliente\" name=\"idcliente\" ><br>\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">Numero Producto</label><br>\r\n");
-      out.write("                            <input  type=\"number\" placeholder=\"producto\" name=\"producto\"><br>\r\n");
+      out.write("                        <!--                        //implementar transaciones -->\r\n");
+      out.write("                        <form action=\"Transferencias2/GrabarConsigna.jsp\" method=\"post\">\r\n");
+      out.write("                            <h6 style=\"align-content: center; color: blue\">Datos de la Consigna</h6>\r\n");
       out.write("\r\n");
+      out.write("                            <td><label for=\"Vcliente\">Identificación de tu cuenta  </label></td>\r\n");
+      out.write("                            <input type=\"text\" name=\"Vcliente\" id=\"Identificacion del cliente\"><br>\r\n");
       out.write("\r\n");
-      out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">Tipo Transaccion</label><br>\r\n");
-      out.write("                            <input  type=\"number\" placeholder=\"tipo\" name=\"tipo\"><br>\r\n");
+      out.write("                            <td><label for=\"Vcliente\">Valor a consignar  </label></td>\r\n");
+      out.write("                            <input type=\"text\" name=\"VValor\" id=\"Valor a consignar\"><br>\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">Valor</label><br>\r\n");
-      out.write("                            <input  type=\"number\" placeholder=\"valor\" name=\"valor\"><br>\r\n");
-      out.write("\r\n");
-      out.write("                            <label class=\"entrada\" style=\"background-color: #1a237e !important \">NRO_factura</label><br>\r\n");
-      out.write("                            <input  type=\"number\" placeholder=\"nro_factura\" name=\"nfacturas\"><br>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("                            <input class=\"btn-floating btn-large pulse\" type=\"submit\" name=\"btnIniciar\" value=\"Login\">\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write("                            <tr>\r\n");
+      out.write("                                <td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"button\" id=\"button\" value=\"Transferir\"></td>\r\n");
+      out.write("                            </tr>\r\n");
       out.write("\r\n");
       out.write("                        </form>\r\n");
       out.write("\r\n");
@@ -251,38 +276,37 @@ public final class usuario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                    ");
 
-    // los datos que recibe la vista del servlets
-    //HttpSession sesion = request.getSession();
-    int nivel = 0;
+                        // los datos que recibe la vista del servlets
+                        //HttpSession sesion = request.getSession();
+                        int nivel = 0;
 
-    // validar el nivel del servlet
-    if (request.getAttribute("nivel") != null) {
-        // este valor nos llega como objeto y hat que pasarla a Integer
-        nivel = (Integer) request.getAttribute("nivel");
-        if (nivel == 1) {
+                        // validar el nivel del servlet
+                        if (request.getAttribute("nivel") != null) {
+                            // este valor nos llega como objeto y hat que pasarla a Integer
+                            nivel = (Integer) request.getAttribute("nivel");
+                            if (nivel == 1) {
 
-            // aqui vamos a crear la variale la session
-            sesion.setAttribute("nombre", request.getAttribute("nombre"));
-            sesion.setAttribute("nivel", nivel);
-            //si es adminstrador lo redirecionamos a la pagina del administrador
-            response.sendRedirect("Admin/usuario.jsp");
+                                // aqui vamos a crear la variale la session
+                                sesion.setAttribute("nombre", request.getAttribute("nombre"));
+                                sesion.setAttribute("nivel", nivel);
+                                //si es adminstrador lo redirecionamos a la pagina del administrador
+                                response.sendRedirect("Admin/usuario.jsp");
 
-        }
-        else if(nivel == 2){
-             // aqui vamos a crear la variale la session
-            sesion.setAttribute("nombre", request.getAttribute("nombre"));
-            sesion.setAttribute("nivel", nivel);
-            //si es adminstrador lo redirecionamos a la pagina del administrador
-            response.sendRedirect("Admin/usuario.jsp");
-                
-        }
+                            } else if (nivel == 2) {
+                                // aqui vamos a crear la variale la session
+                                sesion.setAttribute("nombre", request.getAttribute("nombre"));
+                                sesion.setAttribute("nivel", nivel);
+                                //si es adminstrador lo redirecionamos a la pagina del administrador
+                                response.sendRedirect("Admin/usuario.jsp");
 
-    }
+                            }
 
-    if (request.getParameter("cerrar") != null) {
-        session.invalidate();
-        //sesion.invalidate();
-    }
+                        }
+
+                        if (request.getParameter("cerrar") != null) {
+                            session.invalidate();
+                            //sesion.invalidate();
+                        }
 
 
                     
@@ -293,7 +317,7 @@ public final class usuario_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                </section>\r\n");
       out.write("                <aside>Aside</aside>\r\n");
-      out.write("                <nav>Nav</nav>\r\n");
+      out.write("\r\n");
       out.write("                <footer>Footer</footer>\r\n");
       out.write("\r\n");
       out.write("            </div>\r\n");

@@ -125,7 +125,7 @@ public final class principal_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <!-- <input type=\"hidden\" value=\"<//%= rs.getInt(\"Id_Usuario\")%>\" id=\"Editar\"/>\r\n");
       out.write("                            <input type=\"submit\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal1\" value=\"Editar\"/>  -->\r\n");
       out.write("                            <a href=\"Editar.jsp?id=");
-      out.print( rs.getInt("idusuario"));
+      out.print( rs.getString("idusuario"));
       out.write("\" class=\"btn btn-primary\">Editar</a>\r\n");
       out.write("                            <a href=\"Delete.jsp?id=");
       out.print( rs.getInt("idusuario"));
