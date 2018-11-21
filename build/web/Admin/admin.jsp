@@ -197,7 +197,7 @@
                 </section>
                         <aside>
                      
-                            <a href="../crud/principal.jsp" class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>button</a>
+                            <a href="../crud/principal.jsp" class="waves-effect waves-light btn-large"><i class="material-icons left">Portal Clientes</i>button</a>
    
                             
                         </aside>

@@ -58,6 +58,7 @@ public final class Editar_jsp extends org.apache.jasper.runtime.HttpJspBase
 
        //CONECTANOD A LA BASE DE DATOS:
        Connection con;
+       String idusuario;
         String url="jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_45299d59f23971d?zeroDateTimeBehavior=convertToNull";
        String Driver="com.mysql.jdbc.Driver";
        String user="b736df627cfd48";
@@ -67,9 +68,9 @@ public final class Editar_jsp extends org.apache.jasper.runtime.HttpJspBase
        //Emnpezamos Listando los Datos de la Tabla Usuario pero de la fila seleccionada
        PreparedStatement ps;
        ResultSet rs;
-      int idusuario=Integer.parseInt(request.getParameter("idusuario"));
-       //String idusuario=request.getParameter("idusuario");
-       ps=con.prepareStatement("select * from persona where idusuario="+idusuario);
+        //idusuario=request.getParameter("idusuario");
+              int id=Integer.parseInt(request.getParameter("idusuario"));
+       ps=con.prepareStatement("select * from users where idusuario="+id);
        rs=ps.executeQuery();
        while(rs.next()){
                          
@@ -78,39 +79,37 @@ public final class Editar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <h1>Modificar Registro</h1>\r\n");
       out.write("            <hr>\r\n");
       out.write("            <form action=\"\" method=\"post\" class=\"form-control\" style=\"width: 500px; height: 400px\">\r\n");
-      out.write("                ID Usuario:\r\n");
-      out.write("                <input type=\"text\" readonly=\"\" class=\"form-control\" value=\"");
-      out.print( rs.getInt("idusuario"));
+      out.write("                \r\n");
+      out.write("                 Id usuario:\r\n");
+      out.write("                <input type=\"text\" readonly=\"\"  class=\"form-control\" value=\"");
+      out.print( rs.getString("idusuario"));
       out.write("\"/>\r\n");
       out.write("                \r\n");
-      out.write("                \r\n");
-      out.write("                 Nombres:\r\n");
-      out.write("                <input type=\"text\" name=\"txtNom\" class=\"form-control\" value=\"");
+      out.write("                Nombres:\r\n");
+      out.write("                <input type=\"text\" readonly=\"\" name=\"txtNom\" class=\"form-control\" value=\"");
       out.print( rs.getString("nombreCompleto"));
-      out.write("\"/><br>\r\n");
+      out.write("\"/>\r\n");
       out.write("                \r\n");
-      out.write("                  usuario: \r\n");
+      out.write("                 Usuario:\r\n");
       out.write("                <input type=\"text\" name=\"txtUsuario\" class=\"form-control\" value=\"");
-      out.print( rs.getString("usuario"));
-      out.write("\"/><br>\r\n");
-      out.write("                \r\n");
-      out.write("                 Contraseña: \r\n");
-      out.write("                <input type=\"text\" name=\"txtContrasena\" class=\"form-control\" value=\"");
-      out.print( rs.getString("contrasena"));
-      out.write("\"/><br>\r\n");
-      out.write("                \r\n");
-      out.write("                 nivel: \r\n");
-      out.write("                <input type=\"text\" name=\"txtNivel\" class=\"form-control\" value=\"");
-      out.print( rs.getString("nivel"));
-      out.write("\"/><br>\r\n");
-      out.write("                \r\n");
-      out.write("                \r\n");
-      out.write("                 saldo Disponible: \r\n");
-      out.write("                <input type=\"text\" name=\"txtSaldo\" class=\"form-control\" value=\"");
-      out.print( rs.getString("saldoDisponible"));
+      out.print( rs.getString("Usuario"));
       out.write("\"/><br>\r\n");
       out.write("                \r\n");
       out.write("              \r\n");
+      out.write("                Contraseña:\r\n");
+      out.write("                <input type=\"text\" name=\"txtContrasena\" class=\"form-control\" value=\"");
+      out.print( rs.getString("contrasena"));
+      out.write("\"/>\r\n");
+      out.write("                \r\n");
+      out.write("                  Nivel:\r\n");
+      out.write("                  <input type=\"text\" name=\"txtNivel\" class=\"form-control\" value=\"");
+      out.print( rs.getString("nivel"));
+      out.write("\"/>\r\n");
+      out.write("                \r\n");
+      out.write("                  Saldo Disponible:\r\n");
+      out.write("                  <input type=\"text\" name=\"txtSaldo\" class=\"form-control\" value=\"");
+      out.print( rs.getString("saldodisponible"));
+      out.write("\"/>\r\n");
       out.write("                \r\n");
       out.write("                \r\n");
       out.write("                 <br>\r\n");
@@ -125,25 +124,24 @@ public final class Editar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
 
-       String nombreCompleto, usuario, contrasena,nivel, saldoDisponible;
-             
-                String idusuario2=request.getParameter("idusuario");
+                String nombreCompleto, usuario, contrasena,nivel, saldoDisponible;
+              
+                
                 nombreCompleto = request.getParameter("txtNom");
                 usuario = request.getParameter("txtUsuario");
 
                 contrasena = request.getParameter("txtContrasena");
-
-                nivel = request.getParameter("txtNivel");
+ 
+               nivel = request.getParameter("txtNivel");
+               saldoDisponible = request.getParameter("txtSaldo");
                 
-                saldoDisponible = request.getParameter("txtSaldo");
-       
-       
+              
+                
+                
        if(nombreCompleto != null && usuario != null  && contrasena != null && nivel != null && saldoDisponible != null){
-           ps=con.prepareStatement("update  users set nombreCompleto='"+nombreCompleto+"', usuario='"+usuario+"', contrasena='"+contrasena+"', nivel='"+nivel+"', saldoDisponible='"+saldoDisponible+"'where idusuario="+idusuario);
+           ps=con.prepareStatement("update users set nombreCompleto='"+nombreCompleto+"', usuario='"+usuario+"', contrasena='"+contrasena+"', nivel='"+nivel+"', saldoDisponible='"+saldoDisponible+ "'where idusuario="+id);
            ps.executeUpdate();
-           //JOptionPane.showMessageDialog(null,"Se Agrego Correctamete");           
            response.sendRedirect("principal.jsp");
-           
        }
        
        

@@ -299,7 +299,7 @@ public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                </section>\r\n");
       out.write("                        <aside>\r\n");
       out.write("                     \r\n");
-      out.write("                            <a href=\"../crud/principal.jsp\" class=\"waves-effect waves-light btn-large\"><i class=\"material-icons left\">cloud</i>button</a>\r\n");
+      out.write("                            <a href=\"../crud/principal.jsp\" class=\"waves-effect waves-light btn-large\"><i class=\"material-icons left\">Portal Clientes</i>button</a>\r\n");
       out.write("   \r\n");
       out.write("                            \r\n");
       out.write("                        </aside>\r\n");

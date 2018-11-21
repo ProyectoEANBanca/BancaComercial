@@ -20,12 +20,22 @@
        String Driver="com.mysql.jdbc.Driver";
        String user="b736df627cfd48";
        String clave="8db75918";
-       String idusuario;
+       String idusuario = "";
        Class.forName(Driver);
        con=DriverManager.getConnection(url,user,clave);
        //Emnpezamos Listando los Datos de la Tabla Usuario pero de la fila seleccionada
-       PreparedStatement ps;       
-        idusuario=request.getParameter("idusuario");
+       PreparedStatement ps; 
+            try {
+             idusuario=request.getParameter("idusuario");
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            e.getLocalizedMessage();
+            /* Qué hacer en caso de que no sea un número correcto */
+        }
+            
+      
+
+       // idusuario=request.getParameter("idusuario");
        ps=con.prepareStatement("delete from users where idusuario="+idusuario);
        ps.executeUpdate();
        response.sendRedirect("principal.jsp");

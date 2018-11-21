@@ -17,18 +17,28 @@
         <%
        //CONECTANOD A LA BASE DE DATOS:
        Connection con;
+       String idusuario;
         String url="jdbc:mysql://us-cdbr-iron-east-01.cleardb.net:3306/heroku_45299d59f23971d?zeroDateTimeBehavior=convertToNull";
        String Driver="com.mysql.jdbc.Driver";
        String user="b736df627cfd48";
        String clave="8db75918";
+       int id = 0; 
        Class.forName(Driver);
        con=DriverManager.getConnection(url,user,clave);
        //Emnpezamos Listando los Datos de la Tabla Usuario pero de la fila seleccionada
        PreparedStatement ps;
        ResultSet rs;
-      int idusuario=Integer.parseInt(request.getParameter("idusuario"));
-       //String idusuario=request.getParameter("idusuario");
-       ps=con.prepareStatement("select * from persona where idusuario="+idusuario);
+        //idusuario=request.getParameter("idusuario");
+        
+              try {
+               id=Integer.parseInt(request.getParameter("idusuario"));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            e.getLocalizedMessage();
+            /* Qué hacer en caso de que no sea un número correcto */
+        }
+            
+       ps=con.prepareStatement("select * from users where idusuario="+id);
        rs=ps.executeQuery();
        while(rs.next()){
                          %>
@@ -36,27 +46,25 @@
             <h1>Modificar Registro</h1>
             <hr>
             <form action="" method="post" class="form-control" style="width: 500px; height: 400px">
-                ID Usuario:
-                <input type="text" readonly="" class="form-control" value="<%= rs.getInt("idusuario")%>"/>
                 
+                 Id usuario:
+                <input type="text" readonly=""  class="form-control" value="<%= rs.getString("idusuario")%>"/>
                 
-                 Nombres:
-                <input type="text" name="txtNom" class="form-control" value="<%= rs.getString("nombreCompleto")%>"/><br>
+                Nombres:
+                <input type="text" readonly="" name="txtNom" class="form-control" value="<%= rs.getString("nombreCompleto")%>"/>
                 
-                  usuario: 
-                <input type="text" name="txtUsuario" class="form-control" value="<%= rs.getString("usuario")%>"/><br>
-                
-                 Contraseña: 
-                <input type="text" name="txtContrasena" class="form-control" value="<%= rs.getString("contrasena")%>"/><br>
-                
-                 nivel: 
-                <input type="text" name="txtNivel" class="form-control" value="<%= rs.getString("nivel")%>"/><br>
-                
-                
-                 saldo Disponible: 
-                <input type="text" name="txtSaldo" class="form-control" value="<%= rs.getString("saldoDisponible")%>"/><br>
+                 Usuario:
+                <input type="text" name="txtUsuario" class="form-control" value="<%= rs.getString("Usuario")%>"/><br>
                 
               
+                Contraseña:
+                <input type="text" name="txtContrasena" class="form-control" value="<%= rs.getString("contrasena")%>"/>
+                
+                  Nivel:
+                  <input type="text" name="txtNivel" class="form-control" value="<%= rs.getString("nivel")%>"/>
+                
+                  Saldo Disponible:
+                  <input type="text" name="txtSaldo" class="form-control" value="<%= rs.getString("saldodisponible")%>"/>
                 
                 
                  <br>
@@ -69,25 +77,24 @@
     </body>
 </html>
 <%
-       String nombreCompleto, usuario, contrasena,nivel, saldoDisponible;
-             
-                String idusuario2=request.getParameter("idusuario");
+                String nombreCompleto, usuario, contrasena,nivel, saldoDisponible;
+              
+                
                 nombreCompleto = request.getParameter("txtNom");
                 usuario = request.getParameter("txtUsuario");
 
                 contrasena = request.getParameter("txtContrasena");
-
-                nivel = request.getParameter("txtNivel");
+ 
+               nivel = request.getParameter("txtNivel");
+               saldoDisponible = request.getParameter("txtSaldo");
                 
-                saldoDisponible = request.getParameter("txtSaldo");
-       
-       
+              
+                
+                
        if(nombreCompleto != null && usuario != null  && contrasena != null && nivel != null && saldoDisponible != null){
-           ps=con.prepareStatement("update  users set nombreCompleto='"+nombreCompleto+"', usuario='"+usuario+"', contrasena='"+contrasena+"', nivel='"+nivel+"', saldoDisponible='"+saldoDisponible+"'where idusuario="+idusuario);
+           ps=con.prepareStatement("update users set nombreCompleto='"+nombreCompleto+"', usuario='"+usuario+"', contrasena='"+contrasena+"', nivel='"+nivel+"', saldoDisponible='"+saldoDisponible+ "'where idusuario="+id);
            ps.executeUpdate();
-           //JOptionPane.showMessageDialog(null,"Se Agrego Correctamete");           
            response.sendRedirect("principal.jsp");
-           
        }
        
        

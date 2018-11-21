@@ -22,13 +22,23 @@
        String Driver="com.mysql.jdbc.Driver";
        String user="b736df627cfd48";
        String clave="8db75918";
+       int id = 0; 
        Class.forName(Driver);
        con=DriverManager.getConnection(url,user,clave);
        //Emnpezamos Listando los Datos de la Tabla Usuario pero de la fila seleccionada
        PreparedStatement ps;
        ResultSet rs;
-        idusuario=request.getParameter("idusuario");
-       ps=con.prepareStatement("select * from users where idusuario="+idusuario);
+        //idusuario=request.getParameter("idusuario");
+        
+              try {
+               id=Integer.parseInt(request.getParameter("idusuario"));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            e.getLocalizedMessage();
+            /* Qué hacer en caso de que no sea un número correcto */
+        }
+            
+       ps=con.prepareStatement("select * from users where idusuario="+id);
        rs=ps.executeQuery();
        while(rs.next()){
                          %>
@@ -82,7 +92,7 @@
                 
                 
        if(nombreCompleto != null && usuario != null  && contrasena != null && nivel != null && saldoDisponible != null){
-           ps=con.prepareStatement("update users set nombreCompleto='"+nombreCompleto+"', usuario='"+usuario+"', contrasena='"+contrasena+"', nivel='"+nivel+"', saldoDisponible='"+saldoDisponible+ "'where idusuario="+idusuario);
+           ps=con.prepareStatement("update users set nombreCompleto='"+nombreCompleto+"', usuario='"+usuario+"', contrasena='"+contrasena+"', nivel='"+nivel+"', saldoDisponible='"+saldoDisponible+ "'where idusuario="+id);
            ps.executeUpdate();
            response.sendRedirect("principal.jsp");
        }
